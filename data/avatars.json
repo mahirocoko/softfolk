@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "costumes": [
+    {
+      "id": "signature",
+      "name": "Signature"
+    },
+    {
+      "id": "everyday",
+      "name": "Everyday"
+    },
+    {
+      "id": "work",
+      "name": "Work"
+    }
+  ],
+  "avatars": [
+    {
+      "id": "aster",
+      "name": "Aster",
+      "tags": [
+        "calm",
+        "copper-bob",
+        "earrings",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/aster/signature.png",
+        "everyday": "assets/aster/everyday.png",
+        "work": "assets/aster/work.png"
+      }
+    },
+    {
+      "id": "juno",
+      "name": "Juno",
+      "tags": [
+        "bright",
+        "textured-hair",
+        "ear-cuff",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/juno/signature.png",
+        "everyday": "assets/juno/everyday.png",
+        "work": "assets/juno/work.png"
+      }
+    },
+    {
+      "id": "kai",
+      "name": "Kai",
+      "tags": [
+        "playful",
+        "layered-hair",
+        "earring",
+        "dark-palette"
+      ],
+      "costumes": {
+        "signature": "assets/kai/signature.png",
+        "everyday": "assets/kai/everyday.png",
+        "work": "assets/kai/work.png"
+      }
+    },
+    {
+      "id": "mira",
+      "name": "Mira",
+      "tags": [
+        "poised",
+        "long-hair",
+        "earrings",
+        "jewel-palette"
+      ],
+      "costumes": {
+        "signature": "assets/mira/signature.png",
+        "everyday": "assets/mira/everyday.png",
+        "work": "assets/mira/work.png"
+      }
+    },
+    {
+      "id": "rowan",
+      "name": "Rowan",
+      "tags": [
+        "gentle",
+        "silver-hair",
+        "moustache",
+        "older",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/rowan/signature.png",
+        "everyday": "assets/rowan/everyday.png",
+        "work": "assets/rowan/work.png"
+      }
+    },
+    {
+      "id": "noa",
+      "name": "Noa",
+      "tags": [
+        "curious",
+        "close-curls",
+        "glasses",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/noa/signature.png",
+        "everyday": "assets/noa/everyday.png",
+        "work": "assets/noa/work.png"
+      }
+    },
+    {
+      "id": "zuri",
+      "name": "Zuri",
+      "tags": [
+        "confident",
+        "braids",
+        "earrings",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/zuri/signature.png",
+        "everyday": "assets/zuri/everyday.png",
+        "work": "assets/zuri/work.png"
+      }
+    },
+    {
+      "id": "theo",
+      "name": "Theo",
+      "tags": [
+        "grounded",
+        "shaved-hair",
+        "beard",
+        "neutral-palette"
+      ],
+      "costumes": {
+        "signature": "assets/theo/signature.png",
+        "everyday": "assets/theo/everyday.png",
+        "work": "assets/theo/work.png"
+      }
+    },
+    {
+      "id": "ines",
+      "name": "Ines",
+      "tags": [
+        "thoughtful",
+        "wavy-hair",
+        "gray-streak",
+        "older",
+        "jewel-palette"
+      ],
+      "costumes": {
+        "signature": "assets/ines/signature.png",
+        "everyday": "assets/ines/everyday.png",
+        "work": "assets/ines/work.png"
+      }
+    },
+    {
+      "id": "omar",
+      "name": "Omar",
+      "tags": [
+        "lively",
+        "dense-curls",
+        "moustache",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/omar/signature.png",
+        "everyday": "assets/omar/everyday.png",
+        "work": "assets/omar/work.png"
+      }
+    },
+    {
+      "id": "sora",
+      "name": "Sora",
+      "tags": [
+        "serene",
+        "short-hair",
+        "hearing-aid",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/sora/signature.png",
+        "everyday": "assets/sora/everyday.png",
+        "work": "assets/sora/work.png"
+      }
+    },
+    {
+      "id": "eden",
+      "name": "Eden",
+      "tags": [
+        "cheerful",
+        "long-locs",
+        "earth-palette"
+      ],
+      "costumes": {
+        "signature": "assets/eden/signature.png",
+        "everyday": "assets/eden/everyday.png",
+        "work": "assets/eden/work.png"
+      }
+    }
+  ]
+}
