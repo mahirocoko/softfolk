@@ -17,5 +17,16 @@ coverage/
 tmp/
 .tmp/
 .cache/
+node_modules/
+dist/
 
 .agent-state/
+
+# Logo production scratch and review evidence. Keep only canonical
+# brand/softfolk-symbol.png, brand/icons/, and brand/README.md in Git.
+brand/source/
+brand/qa/
+brand/trials/
+brand/review/
+brand/**/*contact-sheet*.png
+brand/**/*preview*.png

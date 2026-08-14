@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softfolk — an open collection of soft 3D portraits</title>
+    <meta
+      name="description"
+      content="An open collection of 12 original soft 3D identities with signature, everyday, and work portraits."
+    >
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="/brand/icons/softfolk-32.png" type="image/png" sizes="32x32" vite-ignore>
+    <link rel="icon" href="/brand/icons/softfolk-16.png" type="image/png" sizes="16x16" vite-ignore>
+    <link rel="apple-touch-icon" href="/brand/icons/softfolk-256.png" vite-ignore>
+    <link rel="stylesheet" href="/src/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#collection">Skip to collection</a>
+
+    <header class="hero">
+      <div class="masthead">
+        <p class="wordmark">Softfolk</p>
+        <div class="masthead-side">
+          <p class="masthead-meta">36 portraits · 256×256 PNG · CC0</p>
+          <a class="github-link" href="https://github.com/mahirocoko/softfolk" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <div class="hero-inner">
+        <img
+          class="brand-symbol"
+          src="/brand/icons/softfolk-256.png"
+          srcset="/brand/icons/softfolk-256.png 256w, /brand/icons/softfolk-512.png 512w"
+          sizes="clamp(6.75rem, 28vw, 10rem)"
+          width="256"
+          height="256"
+          alt=""
+          decoding="async"
+          fetchpriority="high"
+          vite-ignore
+        >
+        <div class="hero-copy">
+          <p class="kicker">An open portrait collection</p>
+          <h1>Twelve <em>soft folk</em>,<br>three costumes each.</h1>
+          <p class="deck">
+            Original soft 3D portraits for profiles, prototypes, and interfaces.
+            Public domain under CC0 1.0 — take them, use them, no credit needed.
+          </p>
+        </div>
+      </div>
+
+      <ul class="crowd" aria-hidden="true">
+        <li><img src="/assets/aster/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/juno/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/kai/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/mira/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/rowan/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/noa/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/zuri/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/theo/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/ines/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/omar/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/sora/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+        <li><img src="/assets/eden/signature.png" width="256" height="256" alt="" decoding="async" fetchpriority="low" vite-ignore></li>
+      </ul>
+    </header>
+
+    <main id="collection" tabindex="-1">
+      <p id="load-error" class="load-error" hidden></p>
+
+      <div class="toolbar">
+        <div class="toolbar-inner">
+          <search>
+            <form id="discover" action="#" method="get">
+              <label for="identity-search">Find an identity</label>
+              <div class="search-row">
+                <input
+                  id="identity-search"
+                  name="q"
+                  type="search"
+                  autocomplete="off"
+                  placeholder="Name or tag — try “glasses”"
+                  spellcheck="false"
+                >
+                <button type="button" class="text-action" data-reset-search hidden>
+                  Clear search
+                </button>
+              </div>
+            </form>
+          </search>
+
+          <fieldset class="costumes">
+            <legend>Costume</legend>
+            <div class="costume-options">
+              <label>
+                <input type="radio" name="costume" value="signature" checked>
+                <span>Signature</span>
+              </label>
+              <label>
+                <input type="radio" name="costume" value="everyday">
+                <span>Everyday</span>
+              </label>
+              <label>
+                <input type="radio" name="costume" value="work">
+                <span>Work</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="collection-body">
+        <p id="roster-status" class="status" aria-live="polite"></p>
+        <ul id="roster" class="roster" role="list"></ul>
+        <div id="empty-results" class="empty" hidden>
+          <p>No identities match “<span data-empty-query></span>”.</p>
+          <p>Search uses names and the tags already in <code>data/avatars.json</code>.</p>
+        </div>
+      </div>
+    </main>
+
+    <dialog
+      id="compare-dialog"
+      closedby="any"
+      aria-labelledby="compare-title"
+    >
+      <form method="dialog" class="compare-head">
+        <h2 id="compare-title">Compare</h2>
+        <button type="submit" value="close" data-close-compare>Close</button>
+      </form>
+      <div id="compare-stage" class="compare-stage"></div>
+    </dialog>
+
+    <footer class="colophon">
+      <div class="colophon-inner">
+        <section>
+          <h2>Use</h2>
+          <p>
+            Softfolk is dedicated to the public domain under
+            <a href="/LICENSE">CC0 1.0 Universal</a>.
+            Use, modify, and share the portraits without permission or credit.
+          </p>
+        </section>
+        <section>
+          <h2>Spec</h2>
+          <p>
+            Every portrait is a metadata-free 256×256 RGB PNG.
+            Canonical URL:
+            <code>/assets/&lt;identity&gt;/&lt;costume&gt;.png</code>.
+            Costume ids are <code>signature</code>, <code>everyday</code>, and
+            <code>work</code>.
+          </p>
+        </section>
+        <section>
+          <h2>Index</h2>
+          <p>
+            <a href="/data/avatars.json"><code>data/avatars.json</code></a>
+            is the public identity index: names, tags, and paths.
+            Source on
+            <a href="https://github.com/mahirocoko/softfolk" rel="noopener">GitHub</a>.
+          </p>
+        </section>
+      </div>
+    </footer>
+
+    <noscript>
+      <p>
+        Search, costume switching, and compare need JavaScript.
+        The canonical files remain at
+        <a href="/data/avatars.json"><code>/data/avatars.json</code></a>
+        and <code>/assets/&lt;identity&gt;/&lt;costume&gt;.png</code>.
+      </p>
+    </noscript>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
