@@ -4,7 +4,7 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 
 ## Product truth
 
-- Softfolk is a public-domain collection of 12 identities with three costumes each: `signature`, `everyday`, and `work`.
+- Softfolk is a public-domain collection of 16 identities with three costumes each: `signature`, `everyday`, and `work`.
 - Keep product copy concise, direct, and written for someone evaluating or using the collection. Avoid prompt-inflated feature lists, repeated counts, AI-sounding filler, and unsupported claims.
 - CC0 is a real package contract, but not every surface must repeat it. The website footer stays minimal: `Built by Mahiro.` plus the existing repository, metadata, and license links.
 - Do not invent Figma files, Product Hunt status, usage metrics, users, versions, testimonials, or other proof that the repository cannot support.
@@ -12,9 +12,9 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 ## Canonical asset contracts
 
 - `assets/<identity>/<costume>.png` is the only public avatar delivery tree.
-- Keep exactly 36 nested portrait files and no root-level aliases.
+- Keep exactly 48 nested portrait files and no root-level aliases.
 - Every canonical portrait is a metadata-free 256×256 8-bit transparent RGBA PNG. Preserve alpha quality and decontaminated soft edges; do not reintroduce a cream matte.
-- `data/avatars.json` owns the 12×3 identity, tag, costume, and path inventory. Keep its paths aligned with `src/collection.ts` and the files on disk.
+- `data/avatars.json` owns the 16×3 identity, tag, costume, and path inventory. Keep its paths aligned with `src/collection.ts` and the files on disk.
 - Package metadata and visible snippets continue to use canonical `/assets/<identity>/<costume>.png` examples. The hosted demo resolves images, fetches, downloads, and resource links through Vite `BASE_URL` so the standard `/softfolk/` GitHub Pages project path works without changing package-facing examples.
 - `brand/softfolk-symbol.png` is the archival Q master. `brand/icons/` owns fixed-size deliveries. Preserve the selected Q geometry, square padding ratio, gradient, texture, color design, and transparent perimeter.
 - `brand/social/softfolk-og.png` is the canonical 1200×630 opaque RGB share card. Rebuild it from `brand/social/softfolk-og-source.html` with accepted logo/avatar pixels and authored text; do not use imagegen text or a cropped page screenshot.

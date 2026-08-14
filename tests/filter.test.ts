@@ -12,7 +12,7 @@ describe('collection filtering', () => {
   const collection = loadSourceCollection()
 
   it('returns the full roster for a blank query', () => {
-    expect(filterAvatars(collection.avatars, '  ')).toHaveLength(12)
+    expect(filterAvatars(collection.avatars, '  ')).toHaveLength(16)
   })
 
   it('matches identity names without requiring exact case', () => {
@@ -22,10 +22,16 @@ describe('collection filtering', () => {
 
   it('matches existing tags from the public index', () => {
     const glasses = filterAvatars(collection.avatars, 'glasses')
-    expect(glasses.map((avatar) => avatar.id)).toEqual(['noa'])
+    expect(glasses.map((avatar) => avatar.id)).toEqual(['noa', 'lumi'])
 
     const older = filterAvatars(collection.avatars, 'older')
-    expect(older.map((avatar) => avatar.id)).toEqual(['rowan', 'ines'])
+    expect(older.map((avatar) => avatar.id)).toEqual(['rowan', 'ines', 'lumi'])
+  })
+
+  it('matches the explicitly authored Japanese identity tag', () => {
+    expect(filterAvatars(collection.avatars, 'japanese').map((avatar) => avatar.id)).toEqual([
+      'pax',
+    ])
   })
 
   it('requires every search term to match', () => {

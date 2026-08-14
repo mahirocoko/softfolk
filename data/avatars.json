@@ -195,6 +195,69 @@
         "everyday": "assets/eden/everyday.png",
         "work": "assets/eden/work.png"
       }
+    },
+    {
+      "id": "lumi",
+      "name": "Lumi",
+      "tags": [
+        "observant",
+        "silver-hair",
+        "glasses",
+        "older",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/lumi/signature.png",
+        "everyday": "assets/lumi/everyday.png",
+        "work": "assets/lumi/work.png"
+      }
+    },
+    {
+      "id": "pax",
+      "name": "Pax",
+      "tags": [
+        "wry",
+        "japanese",
+        "multicolor-bob",
+        "freckles",
+        "earring",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/pax/signature.png",
+        "everyday": "assets/pax/everyday.png",
+        "work": "assets/pax/work.png"
+      }
+    },
+    {
+      "id": "marlo",
+      "name": "Marlo",
+      "tags": [
+        "joyful",
+        "salt-and-pepper-curls",
+        "middle-aged",
+        "earth-palette"
+      ],
+      "costumes": {
+        "signature": "assets/marlo/signature.png",
+        "everyday": "assets/marlo/everyday.png",
+        "work": "assets/marlo/work.png"
+      }
+    },
+    {
+      "id": "roux",
+      "name": "Roux",
+      "tags": [
+        "delighted",
+        "blue-curls",
+        "knit-cap",
+        "bright-palette"
+      ],
+      "costumes": {
+        "signature": "assets/roux/signature.png",
+        "everyday": "assets/roux/everyday.png",
+        "work": "assets/roux/work.png"
+      }
     }
   ]
 }

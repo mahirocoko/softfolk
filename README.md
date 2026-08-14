@@ -1,8 +1,8 @@
 # Softfolk
 
-[![Softfolk — 36 transparent portraits across 12 identities and 3 costumes](brand/social/softfolk-og.png)](https://mahirocoko.github.io/softfolk/)
+[![Softfolk — 48 transparent portraits across 16 identities and 3 costumes](brand/social/softfolk-og.png)](https://mahirocoko.github.io/softfolk/)
 
-Softfolk is a collection of 12 original soft 3D characters. Each one comes in three costumes—signature, everyday, and work—for a total of 36 transparent 256×256 PNG portraits.
+Softfolk is a collection of 16 original soft 3D characters. Each one comes in three costumes—signature, everyday, and work—for a total of 48 transparent 256×256 PNG portraits.
 
 Use them in profiles, prototypes, mockups, or interfaces. **[Browse the collection →](https://mahirocoko.github.io/softfolk/)**
 
@@ -22,6 +22,10 @@ Use them in profiles, prototypes, mockups, or interfaces. **[Browse the collecti
 | Omar | [`signature`](assets/omar/signature.png) | [`everyday`](assets/omar/everyday.png) | [`work`](assets/omar/work.png) |
 | Sora | [`signature`](assets/sora/signature.png) | [`everyday`](assets/sora/everyday.png) | [`work`](assets/sora/work.png) |
 | Eden | [`signature`](assets/eden/signature.png) | [`everyday`](assets/eden/everyday.png) | [`work`](assets/eden/work.png) |
+| Lumi | [`signature`](assets/lumi/signature.png) | [`everyday`](assets/lumi/everyday.png) | [`work`](assets/lumi/work.png) |
+| Pax | [`signature`](assets/pax/signature.png) | [`everyday`](assets/pax/everyday.png) | [`work`](assets/pax/work.png) |
+| Marlo | [`signature`](assets/marlo/signature.png) | [`everyday`](assets/marlo/everyday.png) | [`work`](assets/marlo/work.png) |
+| Roux | [`signature`](assets/roux/signature.png) | [`everyday`](assets/roux/everyday.png) | [`work`](assets/roux/work.png) |
 
 ## Use an avatar
 

@@ -15,15 +15,16 @@ describe('catalog interaction', () => {
       throw new Error('Fixture is missing search or roster.')
     }
 
-    expect(roster.querySelectorAll('.identity')).toHaveLength(12)
+    expect(roster.querySelectorAll('.identity')).toHaveLength(16)
 
     search.focus()
     search.value = 'glasses'
     search.dispatchEvent(new Event('input', { bubbles: true }))
 
     expect(document.activeElement).toBe(search)
-    expect(roster.querySelectorAll('.identity')).toHaveLength(1)
+    expect(roster.querySelectorAll('.identity')).toHaveLength(2)
     expect(roster.querySelector('[data-identity="noa"]')).not.toBeNull()
+    expect(roster.querySelector('[data-identity="lumi"]')).not.toBeNull()
     expect(document.querySelector<HTMLElement>('#empty-results')?.hidden).toBe(true)
   })
 
@@ -50,7 +51,7 @@ describe('catalog interaction', () => {
     expect(search.value).toBe('')
     expect(roster.hidden).toBe(false)
     expect(empty.hidden).toBe(true)
-    expect(roster.querySelectorAll('.identity')).toHaveLength(12)
+    expect(roster.querySelectorAll('.identity')).toHaveLength(16)
     expect(document.activeElement).toBe(search)
   })
 
