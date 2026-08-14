@@ -112,53 +112,51 @@
       .portrait-field {
         position: absolute;
         z-index: 1;
-        inset: 0 0 0 auto;
-        width: 560px;
+        inset: 0 48px 0 auto;
+        width: 690px;
       }
 
       .portrait {
         position: absolute;
-        width: 230px;
-        height: 230px;
+        bottom: 0;
         object-fit: contain;
       }
 
-      .juno {
-        top: 60px;
-        right: 214px;
-        transform: rotate(-2deg);
+      .aster {
+        left: 0;
+        width: 230px;
+        height: 230px;
+        z-index: 1;
       }
 
       .mira {
-        top: 85px;
-        right: 24px;
-        transform: rotate(2deg);
+        left: 150px;
+        width: 240px;
+        height: 240px;
+        bottom: -4px;
+        z-index: 2;
       }
 
       .kai {
-        top: 250px;
-        right: 284px;
-        z-index: 2;
-        transform: rotate(-1deg);
+        left: 300px;
+        width: 260px;
+        height: 260px;
+        bottom: -18px;
+        z-index: 4;
       }
 
       .zuri {
-        top: 250px;
-        right: 104px;
+        left: 450px;
+        width: 240px;
+        height: 240px;
+        bottom: -4px;
         z-index: 3;
-      }
-
-      .eden {
-        top: 348px;
-        right: 4px;
-        z-index: 2;
-        transform: rotate(2deg);
       }
 
       .url {
         position: absolute;
         z-index: 2;
-        right: 64px;
+        left: 64px;
         bottom: 36px;
         color: rgba(24, 23, 22, 0.58);
         font-size: 15px;
@@ -178,11 +176,10 @@
     </main>
 
     <div class="portrait-field" aria-hidden="true">
-      <img class="portrait juno" src="../../assets/juno/signature.png" alt="">
+      <img class="portrait aster" src="../../assets/aster/signature.png" alt="">
       <img class="portrait mira" src="../../assets/mira/signature.png" alt="">
       <img class="portrait kai" src="../../assets/kai/signature.png" alt="">
       <img class="portrait zuri" src="../../assets/zuri/signature.png" alt="">
-      <img class="portrait eden" src="../../assets/eden/signature.png" alt="">
     </div>
 
     <span class="url">mahirocoko.github.io/softfolk</span>

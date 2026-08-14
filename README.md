@@ -1,10 +1,14 @@
 # Softfolk
 
-An open collection of 12 original soft 3D identities with signature, everyday, and work portraits, ready to use in profiles, prototypes, and interfaces.
+[![Softfolk — 36 transparent portraits across 12 identities and 3 costumes](brand/social/softfolk-og.png)](https://mahirocoko.github.io/softfolk/)
 
-## Avatars
+Softfolk is a collection of 12 original soft 3D characters. Each one comes in three costumes—signature, everyday, and work—for a total of 36 transparent 256×256 PNG portraits.
 
-| Avatar | Signature | Everyday | Work |
+Use them in profiles, prototypes, mockups, or interfaces. **[Browse the collection →](https://mahirocoko.github.io/softfolk/)**
+
+## Collection
+
+| Identity | Signature | Everyday | Work |
 | --- | --- | --- | --- |
 | Aster | [`signature`](assets/aster/signature.png) | [`everyday`](assets/aster/everyday.png) | [`work`](assets/aster/work.png) |
 | Juno | [`signature`](assets/juno/signature.png) | [`everyday`](assets/juno/everyday.png) | [`work`](assets/juno/work.png) |
@@ -19,33 +23,23 @@ An open collection of 12 original soft 3D identities with signature, everyday, a
 | Sora | [`signature`](assets/sora/signature.png) | [`everyday`](assets/sora/everyday.png) | [`work`](assets/sora/work.png) |
 | Eden | [`signature`](assets/eden/signature.png) | [`everyday`](assets/eden/everyday.png) | [`work`](assets/eden/work.png) |
 
-Every portrait is a metadata-free 256×256 transparent RGBA PNG.
+## Use an avatar
 
-## Metadata
-
-[`data/avatars.json`](data/avatars.json) provides deterministic identity and costume paths plus descriptive discovery tags. The canonical path pattern is:
+Portraits follow one path pattern:
 
 ```text
 assets/<identity>/<costume>.png
 ```
 
-The three costume IDs are `signature`, `everyday`, and `work`.
+For example:
 
-## Current contracts
+```html
+<img src="/assets/kai/work.png" alt="Kai in their work outfit" width="256" height="256" />
+```
 
-- `assets/<identity>/<costume>.png` owns the canonical public pixels.
-- `data/avatars.json` owns the 12×3 identity, tag, and path inventory.
-- `src/collection.ts` and `tests/source-inventory.test.ts` own the path and 256×256 transparent RGBA delivery contract.
-- `index.html` and `src/` own the catalog behavior and presentation.
-- `.github/workflows/deploy-pages.yml` owns the verified GitHub Pages build and deployment flow.
-- `brand/softfolk-symbol.png`, `brand/icons/`, and `brand/README.md` own the selected Q brand delivery.
-- `brand/social/softfolk-og.png`, `brand/social/softfolk-og-source.html`, and `brand/social/README.md` own the deterministic 1200×630 share-card contract.
+[`data/avatars.json`](data/avatars.json) lists every identity, costume path, and discovery tag if you want to build a picker or search the collection.
 
-Generation prompts, provider receipts, rejected candidates, and review sheets are not active package contracts. Git history preserves superseded production context.
-
-## Website
-
-A static catalog for the 12×3 collection lives at the repository root. The selected Softfolk symbol Q is the house mark on the first screen. The mark’s `src` is the canonical 256×256 delivery with matching `width`/`height`; `srcset` adds the 512×512 delivery at `512w`, and `sizes` matches the CSS display clamp so 2x screens get enough source density without changing layout size. Favicons use `brand/icons/softfolk-32.png` and `brand/icons/softfolk-16.png`; the apple-touch icon is `brand/icons/softfolk-256.png`. Vite copies only those four runtime files into `dist`. The archival master, source, 64/128 deliveries, QA evidence, and pack tooling stay in the repo.
+## Run the website locally
 
 ```text
 pnpm install
@@ -53,12 +47,8 @@ pnpm dev
 pnpm verify
 ```
 
-`pnpm verify` typechecks, runs source and interaction checks, builds the site for the standard `/softfolk/` GitHub Pages project base, then checks that `dist` still carries the canonical nested PNG files, a fresh copy of `data/avatars.json`, the runtime Q icon files, and the byte-identical 1200×630 Open Graph image. Hosted image, fetch, download, and resource URLs resolve through that project base; visible package snippets remain canonical `/assets/<identity>/<costume>.png` examples.
-
-## Deployment
-
-The production URL is `https://mahirocoko.github.io/softfolk/`. Pushes to `main` run the pinned GitHub Pages workflow, install the exact pnpm version, execute `pnpm verify`, upload `dist`, and deploy through the `github-pages` environment. The canonical Open Graph image is served at `https://mahirocoko.github.io/softfolk/brand/social/softfolk-og.png`.
+`pnpm verify` runs the typecheck, tests, production build, and output checks.
 
 ## License
 
-Softfolk is dedicated to the public domain under [CC0 1.0 Universal](LICENSE). You can use, modify, and share the avatars without asking permission or giving credit.
+Softfolk is released under [CC0 1.0 Universal](LICENSE). You can use, modify, and share the avatars without asking permission or giving credit.
