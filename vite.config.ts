@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
+  base: process.env.SITE_BASE_PATH ?? '/softfolk/',
   publicDir: false,
   plugins: [
     viteStaticCopy({
@@ -18,6 +19,7 @@ export default defineConfig({
           ],
           dest: '.',
         },
+        { src: 'brand/social/softfolk-og.png', dest: '.' },
       ],
     }),
   ],

@@ -31,8 +31,10 @@ export function canonicalAssetPath(identityId: string, costumeId: CostumeId): st
   return `assets/${identityId}/${costumeId}.png`
 }
 
-export function publicUrl(relativePath: string): string {
-  return `/${relativePath.replace(/^\//, '')}`
+export function publicUrl(relativePath: string, basePath = '/'): string {
+  const base = basePath.replace(/^\/+|\/+$/g, '')
+  const path = relativePath.replace(/^\/+/, '')
+  return `${base ? `/${base}` : ''}/${path}`
 }
 
 export function parseCollection(data: unknown): Collection {

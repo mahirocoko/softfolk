@@ -2,6 +2,8 @@
 
 This directory’s canonical deliverables are the selected Softfolk Q transparent master and six square PNG icon sizes. The cleanup changes only background removal and edge decontamination; the selected Q’s geometry, gradient, texture, color design, and full square padding ratio are preserved.
 
+The separate website share-card contract lives in [`social/README.md`](social/README.md). It composes this accepted Q with canonical avatars and does not change the Q asset pack.
+
 ## Provenance
 
 - The immutable provider source is retained outside Git.

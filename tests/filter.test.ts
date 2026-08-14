@@ -69,6 +69,9 @@ describe('collection contract', () => {
     const aster = collection.avatars[0]
     expect(aster.id).toBe('aster')
     expect(publicUrl(aster.costumes.signature)).toBe('/assets/aster/signature.png')
+    expect(publicUrl(aster.costumes.signature, '/softfolk/')).toBe(
+      '/softfolk/assets/aster/signature.png',
+    )
     expect(canonicalAssetPath('aster', 'work')).toBe('assets/aster/work.png')
     expect(portraitAlt(aster, 'Signature')).toContain('Aster in signature costume')
     expect(portraitAlt(aster, 'Signature')).toContain('copper-bob')

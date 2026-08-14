@@ -19,7 +19,7 @@ An open collection of 12 original soft 3D identities with signature, everyday, a
 | Sora | [`signature`](assets/sora/signature.png) | [`everyday`](assets/sora/everyday.png) | [`work`](assets/sora/work.png) |
 | Eden | [`signature`](assets/eden/signature.png) | [`everyday`](assets/eden/everyday.png) | [`work`](assets/eden/work.png) |
 
-Every portrait is a metadata-free 256×256 RGB PNG.
+Every portrait is a metadata-free 256×256 transparent RGBA PNG.
 
 ## Metadata
 
@@ -35,9 +35,11 @@ The three costume IDs are `signature`, `everyday`, and `work`.
 
 - `assets/<identity>/<costume>.png` owns the canonical public pixels.
 - `data/avatars.json` owns the 12×3 identity, tag, and path inventory.
-- `src/collection.ts` and `tests/source-inventory.test.ts` own the path and 256×256 RGB delivery contract.
+- `src/collection.ts` and `tests/source-inventory.test.ts` own the path and 256×256 transparent RGBA delivery contract.
 - `index.html` and `src/` own the catalog behavior and presentation.
+- `.github/workflows/deploy-pages.yml` owns the verified GitHub Pages build and deployment flow.
 - `brand/softfolk-symbol.png`, `brand/icons/`, and `brand/README.md` own the selected Q brand delivery.
+- `brand/social/softfolk-og.png`, `brand/social/softfolk-og-source.html`, and `brand/social/README.md` own the deterministic 1200×630 share-card contract.
 
 Generation prompts, provider receipts, rejected candidates, and review sheets are not active package contracts. Git history preserves superseded production context.
 
@@ -51,7 +53,11 @@ pnpm dev
 pnpm verify
 ```
 
-`pnpm verify` typechecks, runs source and interaction checks, builds the site, then checks that `dist` still serves the canonical nested PNG paths, a fresh copy of `data/avatars.json`, and the runtime Q icon files.
+`pnpm verify` typechecks, runs source and interaction checks, builds the site for the standard `/softfolk/` GitHub Pages project base, then checks that `dist` still carries the canonical nested PNG files, a fresh copy of `data/avatars.json`, the runtime Q icon files, and the byte-identical 1200×630 Open Graph image. Hosted image, fetch, download, and resource URLs resolve through that project base; visible package snippets remain canonical `/assets/<identity>/<costume>.png` examples.
+
+## Deployment
+
+The production URL is `https://mahirocoko.github.io/softfolk/`. Pushes to `main` run the pinned GitHub Pages workflow, install the exact pnpm version, execute `pnpm verify`, upload `dist`, and deploy through the `github-pages` environment. The canonical Open Graph image is served at `https://mahirocoko.github.io/softfolk/brand/social/softfolk-og.png`.
 
 ## License
 

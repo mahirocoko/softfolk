@@ -1,16 +1,18 @@
 import { mountCatalog } from './catalog.ts'
-import { parseCollection } from './collection.ts'
+import { parseCollection, publicUrl } from './collection.ts'
 
 const root = document
 const loadError = document.getElementById('load-error')
+const runtimeBaseUrl = import.meta.env.BASE_URL
+const collectionUrl = publicUrl('data/avatars.json', runtimeBaseUrl)
 
 try {
-  const response = await fetch('/data/avatars.json')
+  const response = await fetch(collectionUrl)
   if (!response.ok) {
-    throw new Error(`Could not load /data/avatars.json (${response.status}).`)
+    throw new Error(`Could not load ${collectionUrl} (${response.status}).`)
   }
   const collection = parseCollection(await response.json())
-  mountCatalog(root, collection)
+  mountCatalog(root, collection, runtimeBaseUrl)
 } catch (error) {
   if (loadError) {
     loadError.hidden = false

@@ -60,14 +60,14 @@ describe('source inventory', () => {
     }
   })
 
-  it('keeps every canonical PNG as 256×256 8-bit RGB', () => {
+  it('keeps every canonical PNG as 256×256 8-bit RGBA', () => {
     for (const filePath of pngFiles) {
       const header = readPngIhdr(readFileSync(filePath))
       expect(header).toEqual({
         width: PORTRAIT_SIZE,
         height: PORTRAIT_SIZE,
         bitDepth: 8,
-        colorType: 2,
+        colorType: 6,
       })
     }
   })

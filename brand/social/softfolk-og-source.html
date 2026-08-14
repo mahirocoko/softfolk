@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1200, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <title>Softfolk Open Graph source</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      body {
+        color: #181716;
+        font-family: "Plus Jakarta Sans", "Avenir Next", sans-serif;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+        background:
+          radial-gradient(ellipse 62% 68% at 4% 4%, rgba(251, 206, 165, 0.62) 0%, transparent 70%),
+          radial-gradient(ellipse 54% 62% at 52% -8%, rgba(248, 180, 170, 0.42) 0%, transparent 68%),
+          radial-gradient(ellipse 55% 75% at 99% 12%, rgba(210, 180, 230, 0.52) 0%, transparent 68%),
+          radial-gradient(ellipse 48% 58% at 94% 88%, rgba(182, 195, 240, 0.42) 0%, transparent 68%),
+          radial-gradient(ellipse 52% 48% at 22% 98%, rgba(252, 218, 190, 0.42) 0%, transparent 70%),
+          #faf8f5;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        content: "";
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 180px 180px;
+      }
+
+      .copy {
+        position: absolute;
+        z-index: 2;
+        top: 58px;
+        left: 64px;
+        width: 650px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 54px;
+      }
+
+      .brand img {
+        width: 88px;
+        height: 88px;
+      }
+
+      .brand-name {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        max-width: 640px;
+        margin: 0;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: -0.04em;
+      }
+
+      .deck {
+        max-width: 560px;
+        margin: 28px 0 0;
+        color: #64605b;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .license {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 34px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        background: #181716;
+      }
+
+      .license::before {
+        content: "✦";
+        color: #8ed9b3;
+      }
+
+      .portrait-field {
+        position: absolute;
+        z-index: 1;
+        inset: 0 0 0 auto;
+        width: 560px;
+      }
+
+      .portrait {
+        position: absolute;
+        width: 230px;
+        height: 230px;
+        object-fit: contain;
+      }
+
+      .juno {
+        top: 60px;
+        right: 214px;
+        transform: rotate(-2deg);
+      }
+
+      .mira {
+        top: 85px;
+        right: 24px;
+        transform: rotate(2deg);
+      }
+
+      .kai {
+        top: 250px;
+        right: 284px;
+        z-index: 2;
+        transform: rotate(-1deg);
+      }
+
+      .zuri {
+        top: 250px;
+        right: 104px;
+        z-index: 3;
+      }
+
+      .eden {
+        top: 348px;
+        right: 4px;
+        z-index: 2;
+        transform: rotate(2deg);
+      }
+
+      .url {
+        position: absolute;
+        z-index: 2;
+        right: 64px;
+        bottom: 36px;
+        color: rgba(24, 23, 22, 0.58);
+        font-size: 15px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="copy">
+      <div class="brand">
+        <img src="../icons/softfolk-256.png" width="88" height="88" alt="">
+        <span class="brand-name">Softfolk</span>
+      </div>
+      <h1>Free soft 3D avatars for your next project</h1>
+      <p class="deck">36 transparent portraits. 12 identities. 3 costumes. Ready for any project.</p>
+      <p class="license">Public domain · CC0 · No attribution</p>
+    </main>
+
+    <div class="portrait-field" aria-hidden="true">
+      <img class="portrait juno" src="../../assets/juno/signature.png" alt="">
+      <img class="portrait mira" src="../../assets/mira/signature.png" alt="">
+      <img class="portrait kai" src="../../assets/kai/signature.png" alt="">
+      <img class="portrait zuri" src="../../assets/zuri/signature.png" alt="">
+      <img class="portrait eden" src="../../assets/eden/signature.png" alt="">
+    </div>
+
+    <span class="url">mahirocoko.github.io/softfolk</span>
+  </body>
+</html>
