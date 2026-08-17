@@ -1,4 +1,4 @@
-export type CostumeId = 'signature' | 'everyday' | 'work'
+export type CostumeId = 'signature' | 'everyday' | 'work' | 'formal' | 'yukata'
 
 export interface Costume {
   id: CostumeId
@@ -18,7 +18,7 @@ export interface Collection {
   avatars: Avatar[]
 }
 
-export const COSTUME_IDS = ['signature', 'everyday', 'work'] as const
+export const COSTUME_IDS = ['signature', 'everyday', 'work', 'formal', 'yukata'] as const
 export const PORTRAIT_SIZE = 256
 
 const COSTUME_ID_SET = new Set<string>(COSTUME_IDS)
@@ -65,7 +65,7 @@ export function parseCollection(data: unknown): Collection {
   })
 
   if (costumes.length !== COSTUME_IDS.length) {
-    throw new Error('Collection must declare exactly three costumes.')
+    throw new Error('Collection must declare exactly five costumes.')
   }
 
   const avatars = root.avatars.map((entry, index) => parseAvatar(entry, index))

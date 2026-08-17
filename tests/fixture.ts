@@ -12,6 +12,8 @@ export function catalogMarkup(): string {
             <label><input type="radio" name="costume" value="signature" checked><span>Signature</span></label>
             <label><input type="radio" name="costume" value="everyday"><span>Everyday</span></label>
             <label><input type="radio" name="costume" value="work"><span>Work</span></label>
+            <label><input type="radio" name="costume" value="formal"><span>Formal</span></label>
+            <label><input type="radio" name="costume" value="yukata"><span>Yukata</span></label>
           </div>
         </fieldset>
 

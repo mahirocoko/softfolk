@@ -79,6 +79,10 @@ describe('build output canonical paths', () => {
     expect(html).not.toContain('softfolk-128.png')
     expect(html).not.toMatch(/\/site\/softfolk-\d+-[^"]+\.png/)
     expect(html).not.toContain('vite-ignore')
+    expect(html).toContain('80 soft 3D portraits')
+    expect(html).toContain('All 16 Identities')
+    expect(html).toContain('5 Costumes Each')
+    expect(html).not.toContain('All 12 Identities')
 
     for (const name of runtimeIcons) {
       expect(html).toContain(`${siteBase}brand/icons/${name}`)

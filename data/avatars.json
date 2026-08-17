@@ -12,6 +12,14 @@
     {
       "id": "work",
       "name": "Work"
+    },
+    {
+      "id": "formal",
+      "name": "Formal"
+    },
+    {
+      "id": "yukata",
+      "name": "Yukata"
     }
   ],
   "avatars": [
@@ -27,7 +35,9 @@
       "costumes": {
         "signature": "assets/aster/signature.png",
         "everyday": "assets/aster/everyday.png",
-        "work": "assets/aster/work.png"
+        "work": "assets/aster/work.png",
+        "formal": "assets/aster/formal.png",
+        "yukata": "assets/aster/yukata.png"
       }
     },
     {
@@ -42,7 +52,9 @@
       "costumes": {
         "signature": "assets/juno/signature.png",
         "everyday": "assets/juno/everyday.png",
-        "work": "assets/juno/work.png"
+        "work": "assets/juno/work.png",
+        "formal": "assets/juno/formal.png",
+        "yukata": "assets/juno/yukata.png"
       }
     },
     {
@@ -57,7 +69,9 @@
       "costumes": {
         "signature": "assets/kai/signature.png",
         "everyday": "assets/kai/everyday.png",
-        "work": "assets/kai/work.png"
+        "work": "assets/kai/work.png",
+        "formal": "assets/kai/formal.png",
+        "yukata": "assets/kai/yukata.png"
       }
     },
     {
@@ -72,7 +86,9 @@
       "costumes": {
         "signature": "assets/mira/signature.png",
         "everyday": "assets/mira/everyday.png",
-        "work": "assets/mira/work.png"
+        "work": "assets/mira/work.png",
+        "formal": "assets/mira/formal.png",
+        "yukata": "assets/mira/yukata.png"
       }
     },
     {
@@ -88,7 +104,9 @@
       "costumes": {
         "signature": "assets/rowan/signature.png",
         "everyday": "assets/rowan/everyday.png",
-        "work": "assets/rowan/work.png"
+        "work": "assets/rowan/work.png",
+        "formal": "assets/rowan/formal.png",
+        "yukata": "assets/rowan/yukata.png"
       }
     },
     {
@@ -103,7 +121,9 @@
       "costumes": {
         "signature": "assets/noa/signature.png",
         "everyday": "assets/noa/everyday.png",
-        "work": "assets/noa/work.png"
+        "work": "assets/noa/work.png",
+        "formal": "assets/noa/formal.png",
+        "yukata": "assets/noa/yukata.png"
       }
     },
     {
@@ -118,7 +138,9 @@
       "costumes": {
         "signature": "assets/zuri/signature.png",
         "everyday": "assets/zuri/everyday.png",
-        "work": "assets/zuri/work.png"
+        "work": "assets/zuri/work.png",
+        "formal": "assets/zuri/formal.png",
+        "yukata": "assets/zuri/yukata.png"
       }
     },
     {
@@ -133,7 +155,9 @@
       "costumes": {
         "signature": "assets/theo/signature.png",
         "everyday": "assets/theo/everyday.png",
-        "work": "assets/theo/work.png"
+        "work": "assets/theo/work.png",
+        "formal": "assets/theo/formal.png",
+        "yukata": "assets/theo/yukata.png"
       }
     },
     {
@@ -149,7 +173,9 @@
       "costumes": {
         "signature": "assets/ines/signature.png",
         "everyday": "assets/ines/everyday.png",
-        "work": "assets/ines/work.png"
+        "work": "assets/ines/work.png",
+        "formal": "assets/ines/formal.png",
+        "yukata": "assets/ines/yukata.png"
       }
     },
     {
@@ -164,7 +190,9 @@
       "costumes": {
         "signature": "assets/omar/signature.png",
         "everyday": "assets/omar/everyday.png",
-        "work": "assets/omar/work.png"
+        "work": "assets/omar/work.png",
+        "formal": "assets/omar/formal.png",
+        "yukata": "assets/omar/yukata.png"
       }
     },
     {
@@ -179,7 +207,9 @@
       "costumes": {
         "signature": "assets/sora/signature.png",
         "everyday": "assets/sora/everyday.png",
-        "work": "assets/sora/work.png"
+        "work": "assets/sora/work.png",
+        "formal": "assets/sora/formal.png",
+        "yukata": "assets/sora/yukata.png"
       }
     },
     {
@@ -193,7 +223,9 @@
       "costumes": {
         "signature": "assets/eden/signature.png",
         "everyday": "assets/eden/everyday.png",
-        "work": "assets/eden/work.png"
+        "work": "assets/eden/work.png",
+        "formal": "assets/eden/formal.png",
+        "yukata": "assets/eden/yukata.png"
       }
     },
     {
@@ -209,7 +241,9 @@
       "costumes": {
         "signature": "assets/lumi/signature.png",
         "everyday": "assets/lumi/everyday.png",
-        "work": "assets/lumi/work.png"
+        "work": "assets/lumi/work.png",
+        "formal": "assets/lumi/formal.png",
+        "yukata": "assets/lumi/yukata.png"
       }
     },
     {
@@ -226,7 +260,9 @@
       "costumes": {
         "signature": "assets/pax/signature.png",
         "everyday": "assets/pax/everyday.png",
-        "work": "assets/pax/work.png"
+        "work": "assets/pax/work.png",
+        "formal": "assets/pax/formal.png",
+        "yukata": "assets/pax/yukata.png"
       }
     },
     {
@@ -241,7 +277,9 @@
       "costumes": {
         "signature": "assets/marlo/signature.png",
         "everyday": "assets/marlo/everyday.png",
-        "work": "assets/marlo/work.png"
+        "work": "assets/marlo/work.png",
+        "formal": "assets/marlo/formal.png",
+        "yukata": "assets/marlo/yukata.png"
       }
     },
     {
@@ -256,7 +294,9 @@
       "costumes": {
         "signature": "assets/roux/signature.png",
         "everyday": "assets/roux/everyday.png",
-        "work": "assets/roux/work.png"
+        "work": "assets/roux/work.png",
+        "formal": "assets/roux/formal.png",
+        "yukata": "assets/roux/yukata.png"
       }
     }
   ]

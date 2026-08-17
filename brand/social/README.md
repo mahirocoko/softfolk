@@ -8,7 +8,7 @@
 - Intended use: Open Graph and Twitter large-image previews
 - Dimensions: 1200×630
 - Format: opaque, metadata-free RGB PNG
-- SHA-256: `26ca10a267ff05e50ccc6a6ab1031b68fe4452097b0ad63bc198041e559d4efd`
+- SHA-256: `ec026c4b190086d25c32839ea949c8ea02a65f835dbb79957e71c05b91f88e5f`
 - Visual source: accepted Softfolk Q, current whole-page gradient/noise, and the canonical Aster, Mira, Kai, and Zuri signature portraits
 - Copy source: authored directly in `brand/social/softfolk-og-source.html`; no generated raster text
 - Production mode: deterministic browser render, not image generation

@@ -53,6 +53,8 @@ describe('collection contract', () => {
           { id: 'signature', name: 'Signature' },
           { id: 'everyday', name: 'Everyday' },
           { id: 'work', name: 'Work' },
+          { id: 'formal', name: 'Formal' },
+          { id: 'yukata', name: 'Yukata' },
         ],
         avatars: [
           {
@@ -63,6 +65,8 @@ describe('collection contract', () => {
               signature: 'assets/aster-signature.png',
               everyday: 'assets/aster/everyday.png',
               work: 'assets/aster/work.png',
+              formal: 'assets/aster/formal.png',
+              yukata: 'assets/aster/yukata.png',
             },
           },
         ],

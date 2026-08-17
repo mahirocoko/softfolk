@@ -129,13 +129,15 @@ describe('catalog interaction', () => {
 
     expect(dialog.open).toBe(true)
     expect(document.activeElement).toBe(close)
-    expect(dialog.querySelectorAll('a[download]')).toHaveLength(3)
+    expect(dialog.querySelectorAll('a[download]')).toHaveLength(5)
     expect(
       [...dialog.querySelectorAll('a[download]')].map((link) => link.getAttribute('href')),
     ).toEqual([
       '/assets/mira/signature.png',
       '/assets/mira/everyday.png',
       '/assets/mira/work.png',
+      '/assets/mira/formal.png',
+      '/assets/mira/yukata.png',
     ])
 
     close.click()
@@ -244,18 +246,20 @@ describe('catalog interaction', () => {
     zuriPortraitBtn.click()
 
     expect(dialog.open).toBe(true)
-    expect(dialog.querySelectorAll('a[download]')).toHaveLength(3)
+    expect(dialog.querySelectorAll('a[download]')).toHaveLength(5)
   })
 
   it('updates studio snippet and dynamic mockup costume labels when switching costumes', () => {
     mountFixture(loadSourceCollection())
     const everyday = document.querySelector<HTMLInputElement>('input[name="costume"][value="everyday"]')
     const work = document.querySelector<HTMLInputElement>('input[name="costume"][value="work"]')
+    const formal = document.querySelector<HTMLInputElement>('input[name="costume"][value="formal"]')
+    const yukata = document.querySelector<HTMLInputElement>('input[name="costume"][value="yukata"]')
     const snippet = document.querySelector<HTMLElement>('#active-specimen-snippet')
     const dynamicCostume = document.querySelector<HTMLElement>('.active-dynamic-costume')
     const dynamicImg = document.querySelector<HTMLImageElement>('.active-dynamic-avatar')
 
-    if (!everyday || !work || !snippet || !dynamicCostume || !dynamicImg) {
+    if (!everyday || !work || !formal || !yukata || !snippet || !dynamicCostume || !dynamicImg) {
       throw new Error('Missing costume inputs or dynamic mockup elements.')
     }
 
@@ -277,5 +281,21 @@ describe('catalog interaction', () => {
     expect(dynamicCostume.textContent).toBe('Work')
     expect(snippet.textContent).toBe('<img src="/assets/aster/work.png" />')
     expect(dynamicImg.src).toContain('/assets/aster/work.png')
+
+    // Switch to Formal
+    formal.checked = true
+    formal.dispatchEvent(new Event('change', { bubbles: true }))
+
+    expect(dynamicCostume.textContent).toBe('Formal')
+    expect(snippet.textContent).toBe('<img src="/assets/aster/formal.png" />')
+    expect(dynamicImg.src).toContain('/assets/aster/formal.png')
+
+    // Switch to Yukata
+    yukata.checked = true
+    yukata.dispatchEvent(new Event('change', { bubbles: true }))
+
+    expect(dynamicCostume.textContent).toBe('Yukata')
+    expect(snippet.textContent).toBe('<img src="/assets/aster/yukata.png" />')
+    expect(dynamicImg.src).toContain('/assets/aster/yukata.png')
   })
 })
