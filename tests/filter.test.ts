@@ -12,7 +12,7 @@ describe('collection filtering', () => {
   const collection = loadSourceCollection()
 
   it('returns the full roster for a blank query', () => {
-    expect(filterAvatars(collection.avatars, '  ')).toHaveLength(16)
+    expect(filterAvatars(collection.avatars, '  ')).toHaveLength(20)
   })
 
   it('matches identity names without requiring exact case', () => {
@@ -31,6 +31,10 @@ describe('collection filtering', () => {
   it('matches the explicitly authored Japanese identity tag', () => {
     expect(filterAvatars(collection.avatars, 'japanese').map((avatar) => avatar.id)).toEqual([
       'pax',
+      'aoi',
+      'mio',
+      'ren',
+      'sota',
     ])
   })
 

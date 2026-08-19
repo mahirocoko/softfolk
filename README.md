@@ -1,8 +1,8 @@
 # Softfolk
 
-[![Softfolk — 80 transparent portraits across 16 identities and 5 costumes](brand/social/softfolk-og.png)](https://mahirocoko.github.io/softfolk/)
+[![Softfolk — 100 transparent portraits across 20 identities and 5 costumes](brand/social/softfolk-og.png)](https://mahirocoko.github.io/softfolk/)
 
-Softfolk is a collection of 16 original soft 3D characters. Each one comes in five costumes—signature, everyday, work, formal, and yukata—for a total of 80 transparent 256×256 PNG portraits.
+Softfolk is a collection of 20 original soft 3D characters. Each one comes in five costumes—signature, everyday, work, formal, and yukata—for a total of 100 transparent 256×256 PNG portraits.
 
 Use them in profiles, prototypes, mockups, or interfaces. **[Browse the collection →](https://mahirocoko.github.io/softfolk/)**
 
@@ -26,6 +26,10 @@ Use them in profiles, prototypes, mockups, or interfaces. **[Browse the collecti
 | Pax | [`signature`](assets/pax/signature.png) | [`everyday`](assets/pax/everyday.png) | [`work`](assets/pax/work.png) | [`formal`](assets/pax/formal.png) | [`yukata`](assets/pax/yukata.png) |
 | Marlo | [`signature`](assets/marlo/signature.png) | [`everyday`](assets/marlo/everyday.png) | [`work`](assets/marlo/work.png) | [`formal`](assets/marlo/formal.png) | [`yukata`](assets/marlo/yukata.png) |
 | Roux | [`signature`](assets/roux/signature.png) | [`everyday`](assets/roux/everyday.png) | [`work`](assets/roux/work.png) | [`formal`](assets/roux/formal.png) | [`yukata`](assets/roux/yukata.png) |
+| Aoi | [`signature`](assets/aoi/signature.png) | [`everyday`](assets/aoi/everyday.png) | [`work`](assets/aoi/work.png) | [`formal`](assets/aoi/formal.png) | [`yukata`](assets/aoi/yukata.png) |
+| Mio | [`signature`](assets/mio/signature.png) | [`everyday`](assets/mio/everyday.png) | [`work`](assets/mio/work.png) | [`formal`](assets/mio/formal.png) | [`yukata`](assets/mio/yukata.png) |
+| Ren | [`signature`](assets/ren/signature.png) | [`everyday`](assets/ren/everyday.png) | [`work`](assets/ren/work.png) | [`formal`](assets/ren/formal.png) | [`yukata`](assets/ren/yukata.png) |
+| Sota | [`signature`](assets/sota/signature.png) | [`everyday`](assets/sota/everyday.png) | [`work`](assets/sota/work.png) | [`formal`](assets/sota/formal.png) | [`yukata`](assets/sota/yukata.png) |
 
 ## Use an avatar
 

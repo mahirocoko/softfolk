@@ -298,6 +298,78 @@
         "formal": "assets/roux/formal.png",
         "yukata": "assets/roux/yukata.png"
       }
+    },
+    {
+      "id": "aoi",
+      "name": "Aoi",
+      "tags": [
+        "composed",
+        "japanese",
+        "long-hair",
+        "pearl-earrings",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/aoi/signature.png",
+        "everyday": "assets/aoi/everyday.png",
+        "work": "assets/aoi/work.png",
+        "formal": "assets/aoi/formal.png",
+        "yukata": "assets/aoi/yukata.png"
+      }
+    },
+    {
+      "id": "mio",
+      "name": "Mio",
+      "tags": [
+        "cheerful",
+        "japanese",
+        "half-up-ponytail",
+        "scrunchie",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/mio/signature.png",
+        "everyday": "assets/mio/everyday.png",
+        "work": "assets/mio/work.png",
+        "formal": "assets/mio/formal.png",
+        "yukata": "assets/mio/yukata.png"
+      }
+    },
+    {
+      "id": "ren",
+      "name": "Ren",
+      "tags": [
+        "calm",
+        "japanese",
+        "short-hair",
+        "side-swept",
+        "dark-palette"
+      ],
+      "costumes": {
+        "signature": "assets/ren/signature.png",
+        "everyday": "assets/ren/everyday.png",
+        "work": "assets/ren/work.png",
+        "formal": "assets/ren/formal.png",
+        "yukata": "assets/ren/yukata.png"
+      }
+    },
+    {
+      "id": "sota",
+      "name": "Sota",
+      "tags": [
+        "warm",
+        "japanese",
+        "middle-part",
+        "beauty-mark",
+        "earth-palette"
+      ],
+      "costumes": {
+        "signature": "assets/sota/signature.png",
+        "everyday": "assets/sota/everyday.png",
+        "work": "assets/sota/work.png",
+        "formal": "assets/sota/formal.png",
+        "yukata": "assets/sota/yukata.png"
+      }
     }
   ]
 }

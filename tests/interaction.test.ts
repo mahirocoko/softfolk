@@ -15,7 +15,7 @@ describe('catalog interaction', () => {
       throw new Error('Fixture is missing search or roster.')
     }
 
-    expect(roster.querySelectorAll('.identity')).toHaveLength(16)
+    expect(roster.querySelectorAll('.identity')).toHaveLength(20)
 
     search.focus()
     search.value = 'glasses'
@@ -51,7 +51,7 @@ describe('catalog interaction', () => {
     expect(search.value).toBe('')
     expect(roster.hidden).toBe(false)
     expect(empty.hidden).toBe(true)
-    expect(roster.querySelectorAll('.identity')).toHaveLength(16)
+    expect(roster.querySelectorAll('.identity')).toHaveLength(20)
     expect(document.activeElement).toBe(search)
   })
 

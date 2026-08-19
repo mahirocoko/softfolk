@@ -26,14 +26,14 @@ describe('source inventory', () => {
   const assetsRoot = repoPath('assets')
   const pngFiles = listPngFiles(assetsRoot)
 
-  it('keeps exactly sixteen identities and five costumes in the public index', () => {
+  it('keeps exactly twenty identities and five costumes in the public index', () => {
     expect(collection.version).toBe(1)
-    expect(collection.avatars).toHaveLength(16)
+    expect(collection.avatars).toHaveLength(20)
     expect(collection.costumes.map((costume) => costume.id)).toEqual([...COSTUME_IDS])
   })
 
-  it('has exactly 80 nested PNGs and no root-level asset aliases', () => {
-    expect(pngFiles).toHaveLength(80)
+  it('has exactly 100 nested PNGs and no root-level asset aliases', () => {
+    expect(pngFiles).toHaveLength(100)
 
     const rootAliases = readdirSync(assetsRoot).filter((name) => name.endsWith('.png'))
     expect(rootAliases).toEqual([])
