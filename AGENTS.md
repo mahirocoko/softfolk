@@ -20,6 +20,7 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 - `brand/softfolk-symbol.png` is the archival Q master. `brand/icons/` owns fixed-size deliveries. Preserve the selected Q geometry, square padding ratio, gradient, texture, color design, and transparent perimeter.
 - `brand/social/softfolk-og.png` is the canonical 1200×630 opaque RGB share card. Rebuild it from `brand/social/softfolk-og-source.html` with accepted logo/avatar pixels and authored text; do not use imagegen text or a cropped page screenshot.
 - Do not create a second avatar delivery tree or silently edit accepted avatar, logo, generated social, or banner pixels during ordinary web work.
+- All future portrait generation, identity/costume expansion, visual correction, and generated website-asset production must originate in the private `mahirocoko/softfolk-production` repository (available locally through the ignored `.softfolk-work/` linked worktree). Prompts, provider-native raws, masks, receipts, candidates, QA, and selection/rejection decisions never belong in this public repository. Promote only Mahiro-accepted final deliveries here, together with the required catalog/runtime/tests/docs updates; never force-add `.softfolk-work/`.
 - The accepted portrait identity is soft 3D clay/felt rather than photorealistic. Preserve the established fine continuous fiber hair, minimalist dot/bead eyes, rosy cheeks, full shoulders, and simplified matte material. Do not reopen avatar art direction unless Mahiro explicitly asks.
 
 ## Website direction
