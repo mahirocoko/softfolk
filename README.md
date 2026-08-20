@@ -2,7 +2,7 @@
 
 [![Softfolk — 100 transparent portraits across 20 identities and 5 costumes](brand/social/softfolk-og.png)](https://mahirocoko.github.io/softfolk/)
 
-Softfolk is a collection of 20 original soft 3D characters. Each one comes in five costumes—signature, everyday, work, formal, and yukata—for a total of 100 transparent 256×256 PNG portraits.
+Softfolk is a collection of 20 original soft 3D characters. Each one comes in five costumes—signature, everyday, work, formal, and yukata—for a total of 100 losslessly optimized transparent 256×256 PNG portraits.
 
 Use them in profiles, prototypes, mockups, or interfaces. **[Browse the collection →](https://mahirocoko.github.io/softfolk/)**
 

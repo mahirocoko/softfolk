@@ -14,6 +14,7 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 - `assets/<identity>/<costume>.png` is the only public avatar delivery tree.
 - Keep exactly 100 nested portrait files and no root-level aliases.
 - Every canonical portrait is a metadata-free 256×256 8-bit transparent RGBA PNG. Preserve alpha quality and decontaminated soft edges; do not reintroduce a cream matte.
+- Canonical PNG encoding is losslessly optimized. Preserve decoded pixels, color type, bit depth, metadata-free delivery, and transparent-pixel RGB; do not use alpha alteration, palette conversion, quantization, resizing, or lossy re-encoding to meet the byte budget.
 - `data/avatars.json` owns the 20×5 identity, tag, costume, and path inventory. Keep its paths aligned with `src/collection.ts` and the files on disk.
 - Package metadata and visible snippets continue to use canonical `/assets/<identity>/<costume>.png` examples. The hosted demo resolves images, fetches, downloads, and resource links through Vite `BASE_URL` so the standard `/softfolk/` GitHub Pages project path works without changing package-facing examples.
 - `brand/softfolk-symbol.png` is the archival Q master. `brand/icons/` owns fixed-size deliveries. Preserve the selected Q geometry, square padding ratio, gradient, texture, color design, and transparent perimeter.
