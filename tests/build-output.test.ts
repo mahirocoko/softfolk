@@ -192,4 +192,44 @@ describe('build output canonical paths', () => {
       expect(html).toContain(`id="${targetId}"`)
     }
   })
+
+  it('emits the zero-FOUC theme bootstrap and accessible two-state toggle', () => {
+    const html = readFileSync(join(distRoot, 'index.html'), 'utf8')
+    const bootstrap = html.match(/<script>([\s\S]*?softfolk-color-scheme[\s\S]*?)<\/script>/)?.[0]
+    const toggle = html.match(/<button[\s\S]*?id="theme-toggle"[\s\S]*?<\/button>/)?.[0]
+
+    expect(bootstrap).toBeDefined()
+    expect(toggle).toBeDefined()
+    if (!bootstrap || !toggle) return
+
+    expect(html).toContain('<meta name="color-scheme" content="light dark">')
+    expect(bootstrap).toContain('prefers-color-scheme: dark')
+    expect(bootstrap).toContain('data-color-scheme')
+    expect(bootstrap).toContain('meta[name="color-scheme"]')
+    expect(bootstrap).toContain('meta[name="theme-color"]')
+    expect(html.indexOf(bootstrap)).toBeLessThan(html.indexOf('rel="stylesheet"'))
+
+    expect(toggle).toContain('aria-label="Switch to dark theme"')
+    expect(toggle).not.toContain('aria-pressed=')
+    expect(toggle).toContain('class="theme-icon-sun"')
+    expect(toggle).toContain('class="theme-icon-moon"')
+    expect(toggle.match(/<line /g)).toHaveLength(8)
+    expect(toggle).toContain('<circle cx="12" cy="12" r="5"></circle>')
+    expect(toggle).toContain('<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>')
+  })
+
+  it('emits the circular theme reveal with a reduced-motion gate', () => {
+    const css = (existsSync(join(distRoot, 'site')) ? readdirSync(join(distRoot, 'site')) : [])
+      .filter((name) => name.endsWith('.css'))
+      .map((name) => readFileSync(join(distRoot, 'site', name), 'utf8'))
+      .join('\n')
+      .replace(/\s/g, '')
+
+    expect(css).toContain('@media(prefers-reduced-motion:no-preference)')
+    expect(css).toContain('::view-transition-old(root)')
+    expect(css).toContain('::view-transition-new(root)')
+    expect(css).toContain('animation:.4scubic-bezier(.22,1,.36,1)boththeme-reveal')
+    expect(css).toContain('clip-path:circle(0atvar(--theme-transition-x)var(--theme-transition-y))')
+    expect(css).toContain('clip-path:circle(var(--theme-transition-radius)atvar(--theme-transition-x)var(--theme-transition-y))')
+  })
 })
