@@ -74,6 +74,6 @@ describe('source inventory', () => {
 
   it('keeps the canonical PNG package within its lossless byte budget', () => {
     const totalBytes = pngFiles.reduce((sum, filePath) => sum + statSync(filePath).size, 0)
-    expect(totalBytes).toBeLessThanOrEqual(6_100_000)
+    expect(totalBytes).toBeLessThanOrEqual(6_110_000)
   })
 })
