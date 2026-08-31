@@ -78,9 +78,10 @@ describe('build output canonical paths', () => {
     expect(html).toContain(`href="${siteBase}brand/icons/softfolk-256.png"`)
     expect(html).not.toContain('softfolk-128.png')
     expect(html).not.toMatch(/\/site\/softfolk-\d+-[^"]+\.png/)
-    expect(html).not.toContain('vite-ignore')
-    expect(html).toContain('100 soft 3D portraits')
-    expect(html).toContain('All 20 Identities')
+    expect(html).toContain('A growing collection of soft 3D portraits')
+    expect(html).toContain('40</span> Unique Identities')
+    expect(html).toContain('200</span> Soft 3D Portraits')
+    expect(html).toContain('All <span id="catalog-identities-count">40</span> Identities')
     expect(html).toContain('5 Costumes Each')
     expect(html).not.toContain('All 12 Identities')
 

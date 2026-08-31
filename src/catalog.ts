@@ -53,6 +53,24 @@ function renderAssetSnippet(element: HTMLElement, assetUrl: string): void {
 }
 
 export function mountCatalog(root: ParentNode, collection: Collection, runtimeBaseUrl = '/'): void {
+  // Synchronize dynamic stats from loaded collection
+  const heroIdentitiesCount = root.querySelector<HTMLElement>('#hero-identities-count')
+  if (heroIdentitiesCount) {
+    heroIdentitiesCount.textContent = String(collection.avatars.length)
+  }
+  const heroPortraitsCount = root.querySelector<HTMLElement>('#hero-portraits-count')
+  if (heroPortraitsCount) {
+    heroPortraitsCount.textContent = String(collection.avatars.length * collection.costumes.length)
+  }
+  const quickstartIdentitiesCount = root.querySelector<HTMLElement>('#quickstart-identities-count')
+  if (quickstartIdentitiesCount) {
+    quickstartIdentitiesCount.textContent = String(collection.avatars.length)
+  }
+  const catalogIdentitiesCount = root.querySelector<HTMLElement>('#catalog-identities-count')
+  if (catalogIdentitiesCount) {
+    catalogIdentitiesCount.textContent = String(collection.avatars.length)
+  }
+
   const searchInput = root.querySelector<HTMLInputElement>('#identity-search')
   const resetButton = root.querySelector<HTMLButtonElement>('[data-reset-search]')
   const roster = root.querySelector<HTMLElement>('#roster')

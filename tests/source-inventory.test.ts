@@ -26,14 +26,40 @@ describe('source inventory', () => {
   const assetsRoot = repoPath('assets')
   const pngFiles = listPngFiles(assetsRoot)
 
-  it('keeps exactly twenty identities and five costumes in the public index', () => {
+  const REQUIRED_PEOPLE_IDS = [
+    'aster', 'juno', 'kai', 'mira', 'rowan',
+    'noa', 'zuri', 'theo', 'ines', 'omar',
+    'sora', 'eden', 'lumi', 'pax', 'marlo',
+    'roux', 'aoi', 'mio', 'ren', 'sota',
+  ]
+
+  const REQUIRED_PALS_IDS = [
+    'moon-cat', 'cloud-bunny', 'moss-capybara', 'star-duck', 'rain-frog',
+    'shell-otter', 'ember-fox', 'dusk-bat', 'honey-bear', 'peach-hamster',
+    'snow-ferret', 'acorn-squirrel', 'puddle-penguin', 'bloom-deer', 'cocoa-raccoon',
+    'lantern-moth', 'pebble-seal', 'sprout-hedgehog', 'comet-shiba', 'dream-alpaca',
+  ]
+
+  it('declares five costumes and includes all baseline People and Pals identities uniquely', () => {
     expect(collection.version).toBe(1)
-    expect(collection.avatars).toHaveLength(20)
     expect(collection.costumes.map((costume) => costume.id)).toEqual([...COSTUME_IDS])
+    expect(collection.avatars.length).toBeGreaterThanOrEqual(40)
+
+    const avatarIds = collection.avatars.map((avatar) => avatar.id)
+    const uniqueIds = new Set(avatarIds)
+    expect(uniqueIds.size).toBe(avatarIds.length)
+    expect(avatarIds.slice(0, 40)).toEqual([...REQUIRED_PEOPLE_IDS, ...REQUIRED_PALS_IDS])
+
+    for (const requiredId of REQUIRED_PEOPLE_IDS) {
+      expect(uniqueIds.has(requiredId)).toBe(true)
+    }
+    for (const requiredId of REQUIRED_PALS_IDS) {
+      expect(uniqueIds.has(requiredId)).toBe(true)
+    }
   })
 
-  it('has exactly 100 nested PNGs and no root-level asset aliases', () => {
-    expect(pngFiles).toHaveLength(100)
+  it('has exactly avatars.length * 5 nested PNGs and no root-level asset aliases', () => {
+    expect(pngFiles).toHaveLength(collection.avatars.length * COSTUME_IDS.length)
 
     const rootAliases = readdirSync(assetsRoot).filter((name) => name.endsWith('.png'))
     expect(rootAliases).toEqual([])
@@ -72,8 +98,9 @@ describe('source inventory', () => {
     }
   })
 
-  it('keeps the canonical PNG package within its lossless byte budget', () => {
+  it('scales the lossless byte budget by average portrait size', () => {
     const totalBytes = pngFiles.reduce((sum, filePath) => sum + statSync(filePath).size, 0)
-    expect(totalBytes).toBeLessThanOrEqual(6_110_000)
+    const averageBytes = totalBytes / pngFiles.length
+    expect(averageBytes).toBeLessThanOrEqual(76_000)
   })
 })

@@ -4,7 +4,8 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 
 ## Product truth
 
-- Softfolk is a public-domain collection of 20 identities with five costumes each: `signature`, `everyday`, `work`, `formal`, and `yukata`.
+- Softfolk is a public-domain, single growing collection of soft 3D characters across five costumes each: `signature`, `everyday`, `work`, `formal`, and `yukata` (current baseline: 40 identities, 200 portraits).
+- New identities append to the single registry; never replace or silently delete existing identities.
 - Keep product copy concise, direct, and written for someone evaluating or using the collection. Avoid prompt-inflated feature lists, repeated counts, AI-sounding filler, and unsupported claims.
 - CC0 is a real package contract, but not every surface must repeat it. The website footer stays minimal: `Built by Mahiro.` plus the existing repository, metadata, and license links.
 - Do not invent Figma files, Product Hunt status, usage metrics, users, versions, testimonials, or other proof that the repository cannot support.
@@ -12,10 +13,10 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 ## Canonical asset contracts
 
 - `assets/<identity>/<costume>.png` is the only public avatar delivery tree.
-- Keep exactly 100 nested portrait files and no root-level aliases.
+- Keep exactly `avatars.length * 5` nested portrait files (currently 200 across 40 identities) and no root-level aliases.
 - Every canonical portrait is a metadata-free 256×256 8-bit transparent RGBA PNG. Preserve alpha quality and decontaminated soft edges; do not reintroduce a cream matte.
 - Canonical PNG encoding is losslessly optimized. Preserve decoded pixels, color type, bit depth, metadata-free delivery, and transparent-pixel RGB; do not use alpha alteration, palette conversion, quantization, resizing, or lossy re-encoding to meet the byte budget.
-- `data/avatars.json` owns the 20×5 identity, tag, costume, and path inventory. Keep its paths aligned with `src/collection.ts` and the files on disk.
+- `data/avatars.json` stays the sole registry owning the identity, tag, costume, and path inventory (current baseline: 40×5). Keep its paths aligned with `src/collection.ts` and the files on disk.
 - Package metadata and visible snippets continue to use canonical `/assets/<identity>/<costume>.png` examples. The hosted demo resolves images, fetches, downloads, and resource links through Vite `BASE_URL` so the standard `/softfolk/` GitHub Pages project path works without changing package-facing examples.
 - `brand/softfolk-symbol.png` is the archival Q master. `brand/icons/` owns fixed-size deliveries. Preserve the selected Q geometry, square padding ratio, gradient, texture, color design, and transparent perimeter.
 - `brand/social/softfolk-og.png` is the canonical 1200×630 opaque RGB share card. Rebuild it from `brand/social/softfolk-og-source.html` with accepted logo/avatar pixels and authored text; do not use imagegen text or a cropped page screenshot.

@@ -370,6 +370,363 @@
         "formal": "assets/sota/formal.png",
         "yukata": "assets/sota/yukata.png"
       }
+    },
+    {
+      "id": "moon-cat",
+      "name": "Moon Cat",
+      "tags": [
+        "cat",
+        "crescent-ear",
+        "charcoal-indigo",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/moon-cat/signature.png",
+        "everyday": "assets/moon-cat/everyday.png",
+        "work": "assets/moon-cat/work.png",
+        "formal": "assets/moon-cat/formal.png",
+        "yukata": "assets/moon-cat/yukata.png"
+      }
+    },
+    {
+      "id": "cloud-bunny",
+      "name": "Cloud Bunny",
+      "tags": [
+        "bunny",
+        "cloud-tuft",
+        "long-ears",
+        "powder-blue",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/cloud-bunny/signature.png",
+        "everyday": "assets/cloud-bunny/everyday.png",
+        "work": "assets/cloud-bunny/work.png",
+        "formal": "assets/cloud-bunny/formal.png",
+        "yukata": "assets/cloud-bunny/yukata.png"
+      }
+    },
+    {
+      "id": "moss-capybara",
+      "name": "Moss Capybara",
+      "tags": [
+        "capybara",
+        "moss-patch",
+        "cocoa-brown",
+        "sage-green",
+        "earth-palette"
+      ],
+      "costumes": {
+        "signature": "assets/moss-capybara/signature.png",
+        "everyday": "assets/moss-capybara/everyday.png",
+        "work": "assets/moss-capybara/work.png",
+        "formal": "assets/moss-capybara/formal.png",
+        "yukata": "assets/moss-capybara/yukata.png"
+      }
+    },
+    {
+      "id": "star-duck",
+      "name": "Star Duck",
+      "tags": [
+        "duck",
+        "star-patch",
+        "butter-yellow",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/star-duck/signature.png",
+        "everyday": "assets/star-duck/everyday.png",
+        "work": "assets/star-duck/work.png",
+        "formal": "assets/star-duck/formal.png",
+        "yukata": "assets/star-duck/yukata.png"
+      }
+    },
+    {
+      "id": "rain-frog",
+      "name": "Rain Frog",
+      "tags": [
+        "frog",
+        "raindrop-marking",
+        "mint-green",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/rain-frog/signature.png",
+        "everyday": "assets/rain-frog/everyday.png",
+        "work": "assets/rain-frog/work.png",
+        "formal": "assets/rain-frog/formal.png",
+        "yukata": "assets/rain-frog/yukata.png"
+      }
+    },
+    {
+      "id": "shell-otter",
+      "name": "Shell Otter",
+      "tags": [
+        "otter",
+        "shell-patch",
+        "whisker-dots",
+        "tawny",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/shell-otter/signature.png",
+        "everyday": "assets/shell-otter/everyday.png",
+        "work": "assets/shell-otter/work.png",
+        "formal": "assets/shell-otter/formal.png",
+        "yukata": "assets/shell-otter/yukata.png"
+      }
+    },
+    {
+      "id": "ember-fox",
+      "name": "Ember Fox",
+      "tags": [
+        "fox",
+        "flame-marking",
+        "pointed-ears",
+        "burnt-orange",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/ember-fox/signature.png",
+        "everyday": "assets/ember-fox/everyday.png",
+        "work": "assets/ember-fox/work.png",
+        "formal": "assets/ember-fox/formal.png",
+        "yukata": "assets/ember-fox/yukata.png"
+      }
+    },
+    {
+      "id": "dusk-bat",
+      "name": "Dusk Bat",
+      "tags": [
+        "bat",
+        "large-ears",
+        "wing-shoulders",
+        "dusty-plum",
+        "jewel-palette"
+      ],
+      "costumes": {
+        "signature": "assets/dusk-bat/signature.png",
+        "everyday": "assets/dusk-bat/everyday.png",
+        "work": "assets/dusk-bat/work.png",
+        "formal": "assets/dusk-bat/formal.png",
+        "yukata": "assets/dusk-bat/yukata.png"
+      }
+    },
+    {
+      "id": "honey-bear",
+      "name": "Honey Bear",
+      "tags": [
+        "bear",
+        "honey-drop",
+        "round-ears",
+        "toasted-oat",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/honey-bear/signature.png",
+        "everyday": "assets/honey-bear/everyday.png",
+        "work": "assets/honey-bear/work.png",
+        "formal": "assets/honey-bear/formal.png",
+        "yukata": "assets/honey-bear/yukata.png"
+      }
+    },
+    {
+      "id": "peach-hamster",
+      "name": "Peach Hamster",
+      "tags": [
+        "hamster",
+        "blossom-patch",
+        "puffed-cheeks",
+        "peach-beige",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/peach-hamster/signature.png",
+        "everyday": "assets/peach-hamster/everyday.png",
+        "work": "assets/peach-hamster/work.png",
+        "formal": "assets/peach-hamster/formal.png",
+        "yukata": "assets/peach-hamster/yukata.png"
+      }
+    },
+    {
+      "id": "snow-ferret",
+      "name": "Snow Ferret",
+      "tags": [
+        "ferret",
+        "snow-marking",
+        "eye-mask",
+        "cool-cream",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/snow-ferret/signature.png",
+        "everyday": "assets/snow-ferret/everyday.png",
+        "work": "assets/snow-ferret/work.png",
+        "formal": "assets/snow-ferret/formal.png",
+        "yukata": "assets/snow-ferret/yukata.png"
+      }
+    },
+    {
+      "id": "acorn-squirrel",
+      "name": "Acorn Squirrel",
+      "tags": [
+        "squirrel",
+        "acorn-marking",
+        "curled-tail",
+        "chestnut",
+        "earth-palette"
+      ],
+      "costumes": {
+        "signature": "assets/acorn-squirrel/signature.png",
+        "everyday": "assets/acorn-squirrel/everyday.png",
+        "work": "assets/acorn-squirrel/work.png",
+        "formal": "assets/acorn-squirrel/formal.png",
+        "yukata": "assets/acorn-squirrel/yukata.png"
+      }
+    },
+    {
+      "id": "puddle-penguin",
+      "name": "Puddle Penguin",
+      "tags": [
+        "penguin",
+        "puddle-patch",
+        "flipper-shoulders",
+        "slate-blue",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/puddle-penguin/signature.png",
+        "everyday": "assets/puddle-penguin/everyday.png",
+        "work": "assets/puddle-penguin/work.png",
+        "formal": "assets/puddle-penguin/formal.png",
+        "yukata": "assets/puddle-penguin/yukata.png"
+      }
+    },
+    {
+      "id": "bloom-deer",
+      "name": "Bloom Deer",
+      "tags": [
+        "deer",
+        "flower-marking",
+        "antler-buds",
+        "soft-fawn",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/bloom-deer/signature.png",
+        "everyday": "assets/bloom-deer/everyday.png",
+        "work": "assets/bloom-deer/work.png",
+        "formal": "assets/bloom-deer/formal.png",
+        "yukata": "assets/bloom-deer/yukata.png"
+      }
+    },
+    {
+      "id": "cocoa-raccoon",
+      "name": "Cocoa Raccoon",
+      "tags": [
+        "raccoon",
+        "ripple-stripe",
+        "eye-mask",
+        "cocoa-grey",
+        "earth-palette"
+      ],
+      "costumes": {
+        "signature": "assets/cocoa-raccoon/signature.png",
+        "everyday": "assets/cocoa-raccoon/everyday.png",
+        "work": "assets/cocoa-raccoon/work.png",
+        "formal": "assets/cocoa-raccoon/formal.png",
+        "yukata": "assets/cocoa-raccoon/yukata.png"
+      }
+    },
+    {
+      "id": "lantern-moth",
+      "name": "Lantern Moth",
+      "tags": [
+        "moth",
+        "lantern-marking",
+        "feathery-antennae",
+        "dusty-butter",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/lantern-moth/signature.png",
+        "everyday": "assets/lantern-moth/everyday.png",
+        "work": "assets/lantern-moth/work.png",
+        "formal": "assets/lantern-moth/formal.png",
+        "yukata": "assets/lantern-moth/yukata.png"
+      }
+    },
+    {
+      "id": "pebble-seal",
+      "name": "Pebble Seal",
+      "tags": [
+        "seal",
+        "pebble-markings",
+        "whisker-dots",
+        "pebble-grey",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/pebble-seal/signature.png",
+        "everyday": "assets/pebble-seal/everyday.png",
+        "work": "assets/pebble-seal/work.png",
+        "formal": "assets/pebble-seal/formal.png",
+        "yukata": "assets/pebble-seal/yukata.png"
+      }
+    },
+    {
+      "id": "sprout-hedgehog",
+      "name": "Sprout Hedgehog",
+      "tags": [
+        "hedgehog",
+        "sprout-marking",
+        "plush-quills",
+        "warm-brown",
+        "earth-palette"
+      ],
+      "costumes": {
+        "signature": "assets/sprout-hedgehog/signature.png",
+        "everyday": "assets/sprout-hedgehog/everyday.png",
+        "work": "assets/sprout-hedgehog/work.png",
+        "formal": "assets/sprout-hedgehog/formal.png",
+        "yukata": "assets/sprout-hedgehog/yukata.png"
+      }
+    },
+    {
+      "id": "comet-shiba",
+      "name": "Comet Shiba",
+      "tags": [
+        "shiba",
+        "comet-streak",
+        "triangular-ears",
+        "rust-and-cream",
+        "warm-palette"
+      ],
+      "costumes": {
+        "signature": "assets/comet-shiba/signature.png",
+        "everyday": "assets/comet-shiba/everyday.png",
+        "work": "assets/comet-shiba/work.png",
+        "formal": "assets/comet-shiba/formal.png",
+        "yukata": "assets/comet-shiba/yukata.png"
+      }
+    },
+    {
+      "id": "dream-alpaca",
+      "name": "Dream Alpaca",
+      "tags": [
+        "alpaca",
+        "spiral-cloud",
+        "fleece-silhouette",
+        "lavender-grey",
+        "cool-palette"
+      ],
+      "costumes": {
+        "signature": "assets/dream-alpaca/signature.png",
+        "everyday": "assets/dream-alpaca/everyday.png",
+        "work": "assets/dream-alpaca/work.png",
+        "formal": "assets/dream-alpaca/formal.png",
+        "yukata": "assets/dream-alpaca/yukata.png"
+      }
     }
   ]
 }

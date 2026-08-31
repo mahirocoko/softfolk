@@ -3,6 +3,11 @@ import { mountCatalog } from '../src/catalog.ts'
 
 export function catalogMarkup(): string {
   return `
+    <header class="hero">
+      <span id="hero-identities-count">40</span>
+      <span id="hero-portraits-count">200</span>
+      <span id="quickstart-identities-count">40</span>
+    </header>
     <main id="collection" tabindex="-1">
       <section class="playground-section" aria-labelledby="studio-heading">
         <h2 id="studio-heading" class="sr-only">Interactive Playground Studio</h2>
@@ -50,16 +55,19 @@ export function catalogMarkup(): string {
         </div>
       </section>
 
-      <form id="discover" action="#" method="get">
-        <label for="identity-search">Find an identity</label>
-        <input id="identity-search" name="q" type="search">
-        <button type="button" data-reset-search hidden>Clear search</button>
-      </form>
-      <p id="roster-status"></p>
-      <ul id="roster" role="list"></ul>
-      <div id="empty-results" hidden>
-        <p>No identities match “<span data-empty-query></span>”.</p>
-      </div>
+      <section class="catalog-section" aria-labelledby="catalog-heading">
+        <h2 id="catalog-heading">All <span id="catalog-identities-count">40</span> Identities</h2>
+        <form id="discover" action="#" method="get">
+          <label for="identity-search">Find an identity</label>
+          <input id="identity-search" name="q" type="search">
+          <button type="button" data-reset-search hidden>Clear search</button>
+        </form>
+        <p id="roster-status"></p>
+        <ul id="roster" role="list"></ul>
+        <div id="empty-results" hidden>
+          <p>No identities match “<span data-empty-query></span>”.</p>
+        </div>
+      </section>
     </main>
     <dialog id="compare-dialog" aria-labelledby="compare-title">
       <form method="dialog">

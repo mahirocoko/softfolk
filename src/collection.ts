@@ -79,7 +79,7 @@ function parseAvatar(entry: unknown, index: number): Avatar {
   }
 
   const avatar = entry as Record<string, unknown>
-  if (typeof avatar.id !== 'string' || !/^[a-z]+$/.test(avatar.id)) {
+  if (typeof avatar.id !== 'string' || !/^[a-z]+(?:-[a-z]+)*$/.test(avatar.id)) {
     throw new Error(`Avatar ${index} has an invalid id.`)
   }
   if (typeof avatar.name !== 'string' || avatar.name.length === 0) {

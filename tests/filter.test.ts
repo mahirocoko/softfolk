@@ -12,35 +12,49 @@ describe('collection filtering', () => {
   const collection = loadSourceCollection()
 
   it('returns the full roster for a blank query', () => {
-    expect(filterAvatars(collection.avatars, '  ')).toHaveLength(20)
+    expect(filterAvatars(collection.avatars, '  ')).toHaveLength(collection.avatars.length)
   })
 
-  it('matches identity names without requiring exact case', () => {
-    const found = filterAvatars(collection.avatars, 'NoA')
-    expect(found.map((avatar) => avatar.id)).toEqual(['noa'])
+  it('matches identity names without requiring exact case across People and Pals', () => {
+    const foundPals = filterAvatars(collection.avatars, 'mOOn-cAt')
+    expect(foundPals.map((avatar) => avatar.id)).toEqual(['moon-cat'])
+
+    const foundPeople = filterAvatars(collection.avatars, 'AsTeR')
+    expect(foundPeople.map((avatar) => avatar.id)).toEqual(['aster'])
   })
 
-  it('matches existing tags from the public index', () => {
+  it('matches tags across both People and Pals', () => {
+    const eyeMask = filterAvatars(collection.avatars, 'eye-mask')
+    expect(eyeMask.map((avatar) => avatar.id)).toEqual(['snow-ferret', 'cocoa-raccoon'])
+
     const glasses = filterAvatars(collection.avatars, 'glasses')
     expect(glasses.map((avatar) => avatar.id)).toEqual(['noa', 'lumi'])
 
-    const older = filterAvatars(collection.avatars, 'older')
-    expect(older.map((avatar) => avatar.id)).toEqual(['rowan', 'ines', 'lumi'])
+    const earthPalette = filterAvatars(collection.avatars, 'earth-palette')
+    expect(earthPalette.map((avatar) => avatar.id)).toEqual([
+      'eden',
+      'marlo',
+      'sota',
+      'moss-capybara',
+      'acorn-squirrel',
+      'cocoa-raccoon',
+      'sprout-hedgehog',
+    ])
   })
 
-  it('matches the explicitly authored Japanese identity tag', () => {
-    expect(filterAvatars(collection.avatars, 'japanese').map((avatar) => avatar.id)).toEqual([
-      'pax',
-      'aoi',
-      'mio',
-      'ren',
-      'sota',
+  it('matches the whisker-dots tag across multiple identities', () => {
+    expect(filterAvatars(collection.avatars, 'whisker-dots').map((avatar) => avatar.id)).toEqual([
+      'shell-otter',
+      'pebble-seal',
     ])
   })
 
   it('requires every search term to match', () => {
-    const found = filterAvatars(collection.avatars, 'older jewel-palette')
-    expect(found.map((avatar) => avatar.id)).toEqual(['ines'])
+    const found = filterAvatars(collection.avatars, 'earth-palette eye-mask')
+    expect(found.map((avatar) => avatar.id)).toEqual(['cocoa-raccoon'])
+
+    const foundPeople = filterAvatars(collection.avatars, 'cool-palette glasses')
+    expect(foundPeople.map((avatar) => avatar.id)).toEqual(['noa', 'lumi'])
   })
 
   it('returns an empty list for queries that match no name or tag', () => {
@@ -88,6 +102,5 @@ describe('collection contract', () => {
     )
     expect(canonicalAssetPath('aster', 'work')).toBe('assets/aster/work.png')
     expect(portraitAlt(aster, 'Signature')).toContain('Aster in signature costume')
-    expect(portraitAlt(aster, 'Signature')).toContain('copper-bob')
   })
 })

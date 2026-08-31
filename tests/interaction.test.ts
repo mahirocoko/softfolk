@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, it } from 'vitest'
+import type { Avatar } from '../src/collection.ts'
 import { loadSourceCollection } from './helpers.ts'
 import { mountFixture } from './fixture.ts'
 
@@ -7,29 +8,74 @@ describe('catalog interaction', () => {
     document.body.innerHTML = ''
   })
 
-  it('keeps search focused while live-filtering the roster', () => {
-    mountFixture(loadSourceCollection())
+  it('synchronizes dynamic hero, quickstart, and catalog counter elements from collection', () => {
+    const collection = loadSourceCollection()
+    const sourceAvatar = collection.avatars[0]
+    if (!sourceAvatar) {
+      throw new Error('Collection needs a baseline avatar.')
+    }
+    const futureAvatar: Avatar = {
+      ...sourceAvatar,
+      id: 'future-friend',
+      name: 'Future Friend',
+      costumes: {
+        signature: 'assets/future-friend/signature.png',
+        everyday: 'assets/future-friend/everyday.png',
+        work: 'assets/future-friend/work.png',
+        formal: 'assets/future-friend/formal.png',
+        yukata: 'assets/future-friend/yukata.png',
+      },
+    }
+    const expandedCollection = {
+      ...collection,
+      avatars: [...collection.avatars, futureAvatar],
+    }
+    mountFixture(expandedCollection)
+
+    const heroIdentities = document.querySelector<HTMLElement>('#hero-identities-count')
+    const heroPortraits = document.querySelector<HTMLElement>('#hero-portraits-count')
+    const quickstartIdentities = document.querySelector<HTMLElement>('#quickstart-identities-count')
+    const catalogIdentities = document.querySelector<HTMLElement>('#catalog-identities-count')
+
+    expect(heroIdentities?.textContent).toBe(String(expandedCollection.avatars.length))
+    expect(heroPortraits?.textContent).toBe(
+      String(expandedCollection.avatars.length * expandedCollection.costumes.length),
+    )
+    expect(quickstartIdentities?.textContent).toBe(String(expandedCollection.avatars.length))
+    expect(catalogIdentities?.textContent).toBe(String(expandedCollection.avatars.length))
+  })
+
+  it('keeps search focused while live-filtering the roster across People and Pals', () => {
+    const collection = loadSourceCollection()
+    mountFixture(collection)
     const search = document.querySelector<HTMLInputElement>('#identity-search')
     const roster = document.querySelector<HTMLElement>('#roster')
     if (!search || !roster) {
       throw new Error('Fixture is missing search or roster.')
     }
 
-    expect(roster.querySelectorAll('.identity')).toHaveLength(20)
+    expect(roster.querySelectorAll('.identity')).toHaveLength(collection.avatars.length)
 
     search.focus()
-    search.value = 'glasses'
+    search.value = 'eye-mask'
     search.dispatchEvent(new Event('input', { bubbles: true }))
 
     expect(document.activeElement).toBe(search)
     expect(roster.querySelectorAll('.identity')).toHaveLength(2)
+    expect(roster.querySelector('[data-identity="snow-ferret"]')).not.toBeNull()
+    expect(roster.querySelector('[data-identity="cocoa-raccoon"]')).not.toBeNull()
+    expect(document.querySelector<HTMLElement>('#empty-results')?.hidden).toBe(true)
+
+    search.value = 'glasses'
+    search.dispatchEvent(new Event('input', { bubbles: true }))
+    expect(roster.querySelectorAll('.identity')).toHaveLength(2)
     expect(roster.querySelector('[data-identity="noa"]')).not.toBeNull()
     expect(roster.querySelector('[data-identity="lumi"]')).not.toBeNull()
-    expect(document.querySelector<HTMLElement>('#empty-results')?.hidden).toBe(true)
   })
 
   it('shows a truthful empty state and restores the roster on reset', () => {
-    mountFixture(loadSourceCollection())
+    const collection = loadSourceCollection()
+    mountFixture(collection)
     const search = document.querySelector<HTMLInputElement>('#identity-search')
     const reset = document.querySelector<HTMLButtonElement>('[data-reset-search]')
     const roster = document.querySelector<HTMLElement>('#roster')
@@ -51,7 +97,7 @@ describe('catalog interaction', () => {
     expect(search.value).toBe('')
     expect(roster.hidden).toBe(false)
     expect(empty.hidden).toBe(true)
-    expect(roster.querySelectorAll('.identity')).toHaveLength(20)
+    expect(roster.querySelectorAll('.identity')).toHaveLength(collection.avatars.length)
     expect(document.activeElement).toBe(search)
   })
 
@@ -117,7 +163,7 @@ describe('catalog interaction', () => {
 
   it('moves focus into compare and returns it to the opener on close', () => {
     mountFixture(loadSourceCollection())
-    const opener = document.querySelector<HTMLButtonElement>('[data-compare="mira"]')
+    const opener = document.querySelector<HTMLButtonElement>('[data-compare="cloud-bunny"]')
     const dialog = document.querySelector<HTMLDialogElement>('#compare-dialog')
     const close = document.querySelector<HTMLButtonElement>('[data-close-compare]')
     if (!opener || !dialog || !close) {
@@ -133,11 +179,11 @@ describe('catalog interaction', () => {
     expect(
       [...dialog.querySelectorAll('a[download]')].map((link) => link.getAttribute('href')),
     ).toEqual([
-      '/assets/mira/signature.png',
-      '/assets/mira/everyday.png',
-      '/assets/mira/work.png',
-      '/assets/mira/formal.png',
-      '/assets/mira/yukata.png',
+      '/assets/cloud-bunny/signature.png',
+      '/assets/cloud-bunny/everyday.png',
+      '/assets/cloud-bunny/work.png',
+      '/assets/cloud-bunny/formal.png',
+      '/assets/cloud-bunny/yukata.png',
     ])
 
     close.click()
@@ -148,29 +194,29 @@ describe('catalog interaction', () => {
 
   it('switches the active studio specimen when clicking in the avatar strip', () => {
     mountFixture(loadSourceCollection())
-    const kaiBtn = document.querySelector<HTMLButtonElement>('[data-avatar-id="kai"]')
+    const bunnyBtn = document.querySelector<HTMLButtonElement>('[data-avatar-id="cloud-bunny"]')
     const mockupImg = document.querySelector<HTMLImageElement>('.active-dynamic-avatar')
     const mockupName = document.querySelector<HTMLElement>('.active-dynamic-name')
     const snippet = document.querySelector<HTMLElement>('#active-specimen-snippet')
 
-    if (!kaiBtn || !mockupImg || !mockupName || !snippet) {
+    if (!bunnyBtn || !mockupImg || !mockupName || !snippet) {
       throw new Error('Studio elements missing in fixture.')
     }
 
     // Verify button accessible label is not duplicated
-    const imgInKai = kaiBtn.querySelector('img')
-    expect(imgInKai?.getAttribute('alt')).toBe('')
-    expect(kaiBtn.textContent?.trim()).toBe('Kai')
+    const imgInBunny = bunnyBtn.querySelector('img')
+    expect(imgInBunny?.getAttribute('alt')).toBe('')
+    expect(bunnyBtn.textContent?.trim()).toBe('Cloud Bunny')
 
-    kaiBtn.click()
+    bunnyBtn.click()
 
-    expect(mockupName.textContent).toBe('Kai')
-    expect(mockupImg.src).toContain('/assets/kai/signature.png')
-    expect(snippet.textContent).toBe('<img src="/assets/kai/signature.png" />')
+    expect(mockupName.textContent).toBe('Cloud Bunny')
+    expect(mockupImg.src).toContain('/assets/cloud-bunny/signature.png')
+    expect(snippet.textContent).toBe('<img src="/assets/cloud-bunny/signature.png" />')
     expect(snippet.querySelectorAll('.hl-tag')).toHaveLength(2)
     expect(snippet.querySelector('.hl-attr')?.textContent).toBe('src')
-    expect(snippet.querySelector('.hl-str')?.textContent).toBe('"/assets/kai/signature.png"')
-    expect(kaiBtn.getAttribute('aria-pressed')).toBe('true')
+    expect(snippet.querySelector('.hl-str')?.textContent).toBe('"/assets/cloud-bunny/signature.png"')
+    expect(bunnyBtn.getAttribute('aria-pressed')).toBe('true')
   })
 
   it('updates stage dataset theme when clicking theme swatches with aria-pressed', () => {
@@ -229,21 +275,21 @@ describe('catalog interaction', () => {
 
   it('opens compare dialog when clicking the catalog card portrait button', () => {
     mountFixture(loadSourceCollection())
-    const zuriPortraitBtn = document.querySelector<HTMLButtonElement>(
-      '[data-identity="zuri"] .portrait-btn',
+    const starDuckPortraitBtn = document.querySelector<HTMLButtonElement>(
+      '[data-identity="star-duck"] .portrait-btn',
     )
     const dialog = document.querySelector<HTMLDialogElement>('#compare-dialog')
 
-    if (!zuriPortraitBtn || !dialog) {
+    if (!starDuckPortraitBtn || !dialog) {
       throw new Error('Missing portrait button or compare dialog.')
     }
 
-    expect(zuriPortraitBtn.tagName).toBe('BUTTON')
-    expect(zuriPortraitBtn.getAttribute('type')).toBe('button')
-    expect(zuriPortraitBtn.getAttribute('aria-label')).toBe('Compare Zuri costumes')
-    expect(zuriPortraitBtn.dataset.compare).toBe('zuri')
+    expect(starDuckPortraitBtn.tagName).toBe('BUTTON')
+    expect(starDuckPortraitBtn.getAttribute('type')).toBe('button')
+    expect(starDuckPortraitBtn.getAttribute('aria-label')).toBe('Compare Star Duck costumes')
+    expect(starDuckPortraitBtn.dataset.compare).toBe('star-duck')
 
-    zuriPortraitBtn.click()
+    starDuckPortraitBtn.click()
 
     expect(dialog.open).toBe(true)
     expect(dialog.querySelectorAll('a[download]')).toHaveLength(5)
