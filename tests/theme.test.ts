@@ -352,6 +352,40 @@ describe('theme manager integration', () => {
     manager.cleanup()
   })
 
+  it('handles rejected transition readiness without losing the selected scheme', async () => {
+    const pending = createPendingViewTransition()
+    const aborted = new DOMException('Viewport size changed', 'InvalidStateError')
+    let rejectReady: (reason: Error) => void = () => {}
+    const ready = new Promise<void>((_resolve, reject) => {
+      rejectReady = reject
+    })
+    const handleRejection = vi.spyOn(ready, 'catch')
+    const transition = { ...pending.transition, ready } as ViewTransition
+    const manager = initTheme(doc, {
+      storage,
+      mediaQuery: new FakeMediaQueryList(false),
+      motionQuery: { matches: false },
+      doc,
+      startViewTransition: (update) => {
+        void update()
+        return transition
+      },
+    })
+
+    toggleBtn.click()
+    expect(handleRejection).toHaveBeenCalledTimes(1)
+    rejectReady(aborted)
+    pending.resolveFinished()
+    await pending.transition.finished
+    await Promise.resolve()
+
+    expect(manager.getScheme()).toBe('dark')
+    expect(storage.getItem(COLOR_SCHEME_STORAGE_KEY)).toBe('dark')
+    expect(doc.documentElement.getAttribute('data-color-scheme')).toBe('dark')
+    expect(doc.documentElement.style.getPropertyValue('--theme-transition-radius')).toBe('')
+    manager.cleanup()
+  })
+
   it('changes immediately when reduced motion is requested', () => {
     const mediaQuery = new FakeMediaQueryList(false)
     const startViewTransition = vi.fn()

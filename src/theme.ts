@@ -224,6 +224,8 @@ export function initTheme(
         }
       })
       activeTransition = transition
+      // Resize or an interrupted reveal can reject readiness after the scheme updates.
+      void transition.ready.catch(() => {})
       transition.finished.then(
         () => clearTransitionGeometry(sequence),
         () => clearTransitionGeometry(sequence),

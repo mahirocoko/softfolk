@@ -62,7 +62,7 @@ The site is a shareable product website and interactive playground rather than a
 5. **S04 Curated Collection Explorer (`#collection-explorer`)**
    - Responsive toolbar with search input (`<search>`), `Clear` action, `Featured 12 / All 40 / People 20 / Pals 20` facet tabs, and 5 curated appearance/character tag chips (`warm-palette`, `cool-palette`, `glasses`, `cat`, `older`).
    - Uses explicit `kind: "person" | "pal"` metadata from `data/avatars.json`.
-   - Defaults to the 12 curated `Featured` identities; `All` reveals the collection in bounded batches of 24 via a truthful `Show more identities` button (hidden whenever all matching items are already visible); active search queries the entire 40-identity registry regardless of active facet.
+   - Defaults to the 12 curated `Featured` identities; `All` reveals the collection in bounded batches of 12 via a truthful `Show more identities` button (hidden whenever all matching items are already visible); active search queries the entire 40-identity registry regardless of active facet.
    - Tonal raised paper pedestal cards (`.identity`) with no border ring, portrait button opening Compare, native PNG `Download` link with icon, and icon-only `Compare` button (`aria-label` + `title`).
    - Five-costume `Compare` modal dialog (`<dialog>`) with direct per-costume PNG downloads, backdrop dismissal, and focus return to the opener.
 
