@@ -26,6 +26,7 @@
     {
       "id": "aster",
       "name": "Aster",
+      "kind": "person",
       "tags": [
         "calm",
         "copper-bob",
@@ -43,6 +44,7 @@
     {
       "id": "juno",
       "name": "Juno",
+      "kind": "person",
       "tags": [
         "bright",
         "textured-hair",
@@ -60,6 +62,7 @@
     {
       "id": "kai",
       "name": "Kai",
+      "kind": "person",
       "tags": [
         "playful",
         "layered-hair",
@@ -77,6 +80,7 @@
     {
       "id": "mira",
       "name": "Mira",
+      "kind": "person",
       "tags": [
         "poised",
         "long-hair",
@@ -94,6 +98,7 @@
     {
       "id": "rowan",
       "name": "Rowan",
+      "kind": "person",
       "tags": [
         "gentle",
         "silver-hair",
@@ -112,6 +117,7 @@
     {
       "id": "noa",
       "name": "Noa",
+      "kind": "person",
       "tags": [
         "curious",
         "close-curls",
@@ -129,6 +135,7 @@
     {
       "id": "zuri",
       "name": "Zuri",
+      "kind": "person",
       "tags": [
         "confident",
         "braids",
@@ -146,6 +153,7 @@
     {
       "id": "theo",
       "name": "Theo",
+      "kind": "person",
       "tags": [
         "grounded",
         "shaved-hair",
@@ -163,6 +171,7 @@
     {
       "id": "ines",
       "name": "Ines",
+      "kind": "person",
       "tags": [
         "thoughtful",
         "wavy-hair",
@@ -181,6 +190,7 @@
     {
       "id": "omar",
       "name": "Omar",
+      "kind": "person",
       "tags": [
         "lively",
         "dense-curls",
@@ -198,6 +208,7 @@
     {
       "id": "sora",
       "name": "Sora",
+      "kind": "person",
       "tags": [
         "serene",
         "short-hair",
@@ -215,6 +226,7 @@
     {
       "id": "eden",
       "name": "Eden",
+      "kind": "person",
       "tags": [
         "cheerful",
         "long-locs",
@@ -231,6 +243,7 @@
     {
       "id": "lumi",
       "name": "Lumi",
+      "kind": "person",
       "tags": [
         "observant",
         "silver-hair",
@@ -249,6 +262,7 @@
     {
       "id": "pax",
       "name": "Pax",
+      "kind": "person",
       "tags": [
         "wry",
         "japanese",
@@ -268,6 +282,7 @@
     {
       "id": "marlo",
       "name": "Marlo",
+      "kind": "person",
       "tags": [
         "joyful",
         "salt-and-pepper-curls",
@@ -285,6 +300,7 @@
     {
       "id": "roux",
       "name": "Roux",
+      "kind": "person",
       "tags": [
         "delighted",
         "blue-curls",
@@ -302,6 +318,7 @@
     {
       "id": "aoi",
       "name": "Aoi",
+      "kind": "person",
       "tags": [
         "composed",
         "japanese",
@@ -320,6 +337,7 @@
     {
       "id": "mio",
       "name": "Mio",
+      "kind": "person",
       "tags": [
         "cheerful",
         "japanese",
@@ -338,6 +356,7 @@
     {
       "id": "ren",
       "name": "Ren",
+      "kind": "person",
       "tags": [
         "calm",
         "japanese",
@@ -356,6 +375,7 @@
     {
       "id": "sota",
       "name": "Sota",
+      "kind": "person",
       "tags": [
         "warm",
         "japanese",
@@ -374,6 +394,7 @@
     {
       "id": "moon-cat",
       "name": "Moon Cat",
+      "kind": "pal",
       "tags": [
         "cat",
         "crescent-ear",
@@ -391,6 +412,7 @@
     {
       "id": "cloud-bunny",
       "name": "Cloud Bunny",
+      "kind": "pal",
       "tags": [
         "bunny",
         "cloud-tuft",
@@ -409,6 +431,7 @@
     {
       "id": "moss-capybara",
       "name": "Moss Capybara",
+      "kind": "pal",
       "tags": [
         "capybara",
         "moss-patch",
@@ -427,6 +450,7 @@
     {
       "id": "star-duck",
       "name": "Star Duck",
+      "kind": "pal",
       "tags": [
         "duck",
         "star-patch",
@@ -444,6 +468,7 @@
     {
       "id": "rain-frog",
       "name": "Rain Frog",
+      "kind": "pal",
       "tags": [
         "frog",
         "raindrop-marking",
@@ -461,6 +486,7 @@
     {
       "id": "shell-otter",
       "name": "Shell Otter",
+      "kind": "pal",
       "tags": [
         "otter",
         "shell-patch",
@@ -479,6 +505,7 @@
     {
       "id": "ember-fox",
       "name": "Ember Fox",
+      "kind": "pal",
       "tags": [
         "fox",
         "flame-marking",
@@ -497,6 +524,7 @@
     {
       "id": "dusk-bat",
       "name": "Dusk Bat",
+      "kind": "pal",
       "tags": [
         "bat",
         "large-ears",
@@ -515,6 +543,7 @@
     {
       "id": "honey-bear",
       "name": "Honey Bear",
+      "kind": "pal",
       "tags": [
         "bear",
         "honey-drop",
@@ -533,6 +562,7 @@
     {
       "id": "peach-hamster",
       "name": "Peach Hamster",
+      "kind": "pal",
       "tags": [
         "hamster",
         "blossom-patch",
@@ -551,6 +581,7 @@
     {
       "id": "snow-ferret",
       "name": "Snow Ferret",
+      "kind": "pal",
       "tags": [
         "ferret",
         "snow-marking",
@@ -569,6 +600,7 @@
     {
       "id": "acorn-squirrel",
       "name": "Acorn Squirrel",
+      "kind": "pal",
       "tags": [
         "squirrel",
         "acorn-marking",
@@ -587,6 +619,7 @@
     {
       "id": "puddle-penguin",
       "name": "Puddle Penguin",
+      "kind": "pal",
       "tags": [
         "penguin",
         "puddle-patch",
@@ -605,6 +638,7 @@
     {
       "id": "bloom-deer",
       "name": "Bloom Deer",
+      "kind": "pal",
       "tags": [
         "deer",
         "flower-marking",
@@ -623,6 +657,7 @@
     {
       "id": "cocoa-raccoon",
       "name": "Cocoa Raccoon",
+      "kind": "pal",
       "tags": [
         "raccoon",
         "ripple-stripe",
@@ -641,6 +676,7 @@
     {
       "id": "lantern-moth",
       "name": "Lantern Moth",
+      "kind": "pal",
       "tags": [
         "moth",
         "lantern-marking",
@@ -659,6 +695,7 @@
     {
       "id": "pebble-seal",
       "name": "Pebble Seal",
+      "kind": "pal",
       "tags": [
         "seal",
         "pebble-markings",
@@ -677,6 +714,7 @@
     {
       "id": "sprout-hedgehog",
       "name": "Sprout Hedgehog",
+      "kind": "pal",
       "tags": [
         "hedgehog",
         "sprout-marking",
@@ -695,6 +733,7 @@
     {
       "id": "comet-shiba",
       "name": "Comet Shiba",
+      "kind": "pal",
       "tags": [
         "shiba",
         "comet-streak",
@@ -713,6 +752,7 @@
     {
       "id": "dream-alpaca",
       "name": "Dream Alpaca",
+      "kind": "pal",
       "tags": [
         "alpaca",
         "spiral-cloud",

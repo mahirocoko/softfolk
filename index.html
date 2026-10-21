@@ -82,51 +82,100 @@
     >
     <link rel="stylesheet" href="/src/styles.css">
   </head>
-  <body>
-    <a class="skip-link" href="#collection">Skip to playground</a>
+  <body id="top">
+    <a class="skip-link" href="#studio">Skip to Studio</a>
 
-    <!-- Hero Section -->
-    <header class="hero">
-      <button
-        type="button"
-        id="theme-toggle"
-        class="theme-toggle"
-        aria-label="Switch to dark theme"
-        title="Switch to dark theme"
-      >
-        <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
+    <!-- Compact Site Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="header-brand" href="#top" aria-label="Softfolk — back to top">
+          <img
+            class="brand-symbol"
+            src="%BASE_URL%brand/icons/softfolk-256.png"
+            srcset="%BASE_URL%brand/icons/softfolk-256.png 256w, %BASE_URL%brand/icons/softfolk-512.png 512w"
+            sizes="2rem"
+            width="256"
+            height="256"
+            alt=""
+            decoding="async"
+            vite-ignore
+          >
+          <span class="header-wordmark">Softfolk</span>
+        </a>
 
-      <div class="hero-brand">
-        <img
-          class="brand-symbol"
-          src="%BASE_URL%brand/icons/softfolk-256.png"
-          srcset="%BASE_URL%brand/icons/softfolk-256.png 256w, %BASE_URL%brand/icons/softfolk-512.png 512w"
-          sizes="clamp(6.75rem, 28vw, 10rem)"
-          width="256"
-          height="256"
-          alt=""
-          decoding="async"
-          fetchpriority="high"
-          vite-ignore
-        >
+        <nav class="header-nav" aria-label="Sections">
+          <a href="#studio">Studio</a>
+          <a href="#collection-explorer">Collection</a>
+        </nav>
+
+        <div class="header-actions">
+          <a
+            class="header-icon-link"
+            href="https://github.com/mahirocoko/softfolk"
+            target="_blank"
+            rel="noopener"
+            aria-label="Softfolk on GitHub"
+            title="Softfolk on GitHub"
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Switch to dark theme"
+            title="Switch to dark theme"
+          >
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- S01 Curtain Call Hero -->
+    <section class="hero" aria-labelledby="hero-title" data-intro="idle">
+      <div class="hero-stage" aria-hidden="true">
+        <div class="hero-ensemble-stage">
+          <div class="hero-stage-aura"></div>
+          <div class="hero-stage-plinth"></div>
+          <div class="hero-ensemble-frame">
+            <img
+              id="hero-ensemble-img"
+              class="hero-ensemble-img"
+              src="/src/assets/hero-ensemble.webp"
+              width="1536"
+              height="1024"
+              alt=""
+              fetchpriority="high"
+              decoding="async"
+            >
+          </div>
+          <div class="wordmark-plaque">
+            <span class="wordmark-dot"></span>
+            <span class="wordmark-text">Softfolk</span>
+            <span class="wordmark-sep">·</span>
+            <span class="wordmark-tag">CC0 1.0 Public Domain</span>
+          </div>
+        </div>
       </div>
 
       <div class="hero-content">
-        <h1 class="hero-title">
+        <h1 class="hero-title" id="hero-title">
           Free Soft 3D Avatars for Your Next Project
         </h1>
 
@@ -135,8 +184,11 @@
         </p>
 
         <div class="hero-actions">
+          <a class="btn btn-primary" href="#studio">
+            <span>Explore Studio</span>
+          </a>
           <a
-            class="btn btn-primary"
+            class="btn btn-secondary"
             href="https://github.com/mahirocoko/softfolk"
             target="_blank"
             rel="noopener"
@@ -144,273 +196,357 @@
             <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>
-            <span>Get on GitHub</span>
-          </a>
-          <a class="btn btn-secondary" href="#collection">
-            <span>Explore Playground</span>
+            <span>View on GitHub</span>
           </a>
         </div>
 
-        <ul class="feature-badges" aria-label="Collection features">
-          <li class="feature-badge"><span class="badge-dot">✦</span> <span id="hero-identities-count">40</span> Unique Identities</li>
-          <li class="feature-badge"><span class="badge-dot">✦</span> <span id="hero-portraits-count">200</span> Soft 3D Portraits</li>
-          <li class="feature-badge"><span class="badge-dot">✦</span> 5 Costumes Each</li>
-          <li class="feature-badge"><span class="badge-dot">✦</span> CC0 Public Domain</li>
-          <li class="feature-badge"><span class="badge-dot">✦</span> 256×256 PNG</li>
-          <li class="feature-badge"><span class="badge-dot">✦</span> Zero Attribution</li>
+        <ul class="feature-badges" aria-label="Collection facts">
+          <li class="feature-badge"><span id="hero-identities-count">40</span> Unique Identities</li>
+          <li class="feature-badge"><span id="hero-portraits-count">200</span> Soft 3D Portraits</li>
+          <li class="feature-badge">5 Costumes Each</li>
+          <li class="feature-badge">CC0 Public Domain</li>
+          <li class="feature-badge">256×256 PNG</li>
+          <li class="feature-badge">Zero Attribution</li>
         </ul>
-      </div>
 
-      <!-- Quickstart 3-Step Integration Bar -->
-      <div class="quickstart-container">
-        <div class="quickstart-card">
-          <div class="quickstart-step">
-            <span class="step-num">1</span>
-            <div class="step-meta">
-              <h2 class="step-title">Choose Identity</h2>
-              <p class="step-desc">Pick from <span id="quickstart-identities-count">40</span> characters and 5 costumes</p>
-            </div>
-            <div class="step-pill">
-              <code><span class="hl-fn">fetch</span>(<span class="hl-str">'/data/avatars.json'</span>)</code>
-            </div>
-          </div>
-
-          <div class="quickstart-step">
-            <span class="step-num">2</span>
-            <div class="step-meta">
-              <h2 class="step-title">Direct Asset URL</h2>
-              <p class="step-desc">Embed canonical PNG paths anywhere</p>
-            </div>
-            <div class="step-pill">
-              <code><span class="hl-str">/assets/aster/signature.png</span></code>
-            </div>
-          </div>
-
-          <div class="quickstart-step">
-            <span class="step-num">3</span>
-            <div class="step-meta">
-              <h2 class="step-title">Enjoy (CC0)!</h2>
-              <p class="step-desc">Free for personal and commercial apps</p>
-            </div>
-            <div class="step-pill">
-              <code><span class="hl-tag">&lt;img</span> <span class="hl-attr">src</span>=<span class="hl-str">"/assets/aster/signature.png"</span> <span class="hl-tag">/&gt;</span></code>
-            </div>
+        <div class="hero-cast">
+          <span class="hero-cast-label" id="hero-cast-label">In the ensemble</span>
+          <div class="hero-cast-chips" role="group" aria-labelledby="hero-cast-label">
+            <a class="cast-chip is-active" href="#studio" data-cast="aster" aria-current="true">
+              <img src="%BASE_URL%assets/aster/signature.png" width="256" height="256" alt="" loading="lazy" decoding="async" vite-ignore>
+              <span>Aster</span>
+            </a>
+            <a class="cast-chip" href="#studio" data-cast="moon-cat">
+              <img src="%BASE_URL%assets/moon-cat/signature.png" width="256" height="256" alt="" loading="lazy" decoding="async" vite-ignore>
+              <span>Moon Cat</span>
+            </a>
+            <a class="cast-chip" href="#studio" data-cast="cloud-bunny">
+              <img src="%BASE_URL%assets/cloud-bunny/signature.png" width="256" height="256" alt="" loading="lazy" decoding="async" vite-ignore>
+              <span>Cloud Bunny</span>
+            </a>
+            <a class="cast-chip" href="#studio" data-cast="star-duck">
+              <img src="%BASE_URL%assets/star-duck/signature.png" width="256" height="256" alt="" loading="lazy" decoding="async" vite-ignore>
+              <span>Star Duck</span>
+            </a>
+            <a class="cast-chip" href="#studio" data-cast="moss-capybara">
+              <img src="%BASE_URL%assets/moss-capybara/signature.png" width="256" height="256" alt="" loading="lazy" decoding="async" vite-ignore>
+              <span>Moss Capybara</span>
+            </a>
+            <a class="cast-chip" href="#studio" data-cast="ember-fox">
+              <img src="%BASE_URL%assets/ember-fox/signature.png" width="256" height="256" alt="" loading="lazy" decoding="async" vite-ignore>
+              <span>Ember Fox</span>
+            </a>
+            <a class="cast-chip" href="#studio" data-cast="rowan">
+              <img src="%BASE_URL%assets/rowan/signature.png" width="256" height="256" alt="" loading="lazy" decoding="async" vite-ignore>
+              <span>Rowan</span>
+            </a>
+            <a class="cast-chip" href="#studio" data-cast="dream-alpaca">
+              <img src="%BASE_URL%assets/dream-alpaca/signature.png" width="256" height="256" alt="" loading="lazy" decoding="async" vite-ignore>
+              <span>Dream Alpaca</span>
+            </a>
           </div>
         </div>
       </div>
-
-      <!-- Marquee Ribbon -->
-      <div class="marquee-wrapper" aria-label="Portraits rolling showcase">
-        <div class="marquee-track" id="marquee-track" aria-hidden="true">
-          <div class="marquee-item"><img src="%BASE_URL%assets/aster/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Aster</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/moon-cat/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Moon Cat</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/mira/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Mira</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/cloud-bunny/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Cloud Bunny</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/kai/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Kai</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/moss-capybara/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Moss Capybara</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/zuri/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Zuri</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/star-duck/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Star Duck</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/rowan/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Rowan</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/ember-fox/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Ember Fox</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/noa/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Noa</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/dream-alpaca/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Dream Alpaca</span></div>
-          <!-- Loop duplicate for seamless loop -->
-          <div class="marquee-item"><img src="%BASE_URL%assets/aster/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Aster</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/moon-cat/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Moon Cat</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/mira/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Mira</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/cloud-bunny/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Cloud Bunny</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/kai/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Kai</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/moss-capybara/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Moss Capybara</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/zuri/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Zuri</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/star-duck/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Star Duck</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/rowan/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Rowan</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/ember-fox/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Ember Fox</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/noa/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Noa</span></div>
-          <div class="marquee-item"><img src="%BASE_URL%assets/dream-alpaca/signature.png" width="256" height="256" alt="" loading="eager" decoding="async" vite-ignore><span>Dream Alpaca</span></div>
-        </div>
-      </div>
-    </header>
+    </section>
 
     <main id="collection" tabindex="-1">
       <p id="load-error" class="load-error" hidden></p>
 
-      <!-- Playground Studio Section -->
-      <section class="playground-section" aria-labelledby="studio-heading">
-        <h2 id="studio-heading" class="sr-only">Interactive Playground Studio</h2>
-        <!-- Dynamic Studio Stage Canvas -->
+      <!-- S02 Studio Product Center -->
+      <section class="studio-section" id="studio" aria-labelledby="studio-heading" tabindex="-1">
+        <div class="section-head">
+          <p class="eyebrow">The Studio</p>
+          <h2 id="studio-heading" class="section-title">Try every costume, background, and identity</h2>
+          <p class="section-deck">
+            Pick an identity, switch its costume and backdrop, then copy the snippet or download the PNG. What you see is exactly what ships.
+          </p>
+        </div>
+
+        <!-- Dynamic Studio Stage Canvas (stays transparent; children own paint) -->
         <div id="studio-stage" class="studio-stage" data-theme="sage">
-          <!-- Studio Top Controls Bar -->
-          <div class="studio-top-bar">
-            <!-- Costume Switcher Pills -->
-            <fieldset class="costumes">
-              <legend class="sr-only">Costume</legend>
-              <div class="costume-options">
-                <label>
-                  <input type="radio" name="costume" value="signature" checked>
-                  <span>Signature</span>
-                </label>
-                <label>
-                  <input type="radio" name="costume" value="everyday">
-                  <span>Everyday</span>
-                </label>
-                <label>
-                  <input type="radio" name="costume" value="work">
-                  <span>Work</span>
-                </label>
-                <label>
-                  <input type="radio" name="costume" value="formal">
-                  <span>Formal</span>
-                </label>
-                <label>
-                  <input type="radio" name="costume" value="yukata">
-                  <span>Yukata</span>
-                </label>
+          <div class="workbench">
+            <!-- Specimen canvas: the exact canonical portrait on the active theme -->
+            <div class="specimen-panel">
+              <div class="specimen-canvas">
+                <img
+                  id="specimen-portrait"
+                  src="%BASE_URL%assets/aster/signature.png"
+                  alt="Aster in signature costume. Soft 3D portrait, 256 by 256 pixels."
+                  width="256"
+                  height="256"
+                  decoding="async"
+                  vite-ignore
+                >
               </div>
-            </fieldset>
-
-            <!-- Theme Color Swatches -->
-            <div class="theme-swatches" aria-label="Stage theme colors">
-              <button type="button" class="swatch-btn" data-theme="mint" title="Soft Mint" aria-label="Theme Mint" aria-pressed="false" style="--swatch-color: #D5ECE4;"></button>
-              <button type="button" class="swatch-btn active" data-theme="sage" title="Soft Sage" aria-label="Theme Sage" aria-pressed="true" style="--swatch-color: #D3DFDC;"></button>
-              <button type="button" class="swatch-btn" data-theme="cream" title="Warm Cream" aria-label="Theme Cream" aria-pressed="false" style="--swatch-color: #F7F3EE;"></button>
-              <button type="button" class="swatch-btn" data-theme="peach" title="Soft Peach" aria-label="Theme Peach" aria-pressed="false" style="--swatch-color: #FDE8E1;"></button>
-              <button type="button" class="swatch-btn" data-theme="blue" title="Sky Blue" aria-label="Theme Blue" aria-pressed="false" style="--swatch-color: #DCEAF7;"></button>
-              <button type="button" class="swatch-btn" data-theme="buttercream" title="Buttercream" aria-label="Theme Buttercream" aria-pressed="false" style="--swatch-color: #FBF0D1;"></button>
-              <button type="button" class="swatch-btn" data-theme="apricot" title="Soft Apricot" aria-label="Theme Apricot" aria-pressed="false" style="--swatch-color: #FADDC7;"></button>
+              <div class="specimen-meta">
+                <h3 class="specimen-name active-dynamic-name">Aster</h3>
+                <p class="specimen-sub">
+                  <span class="active-dynamic-kind">Person</span> ·
+                  <span class="active-dynamic-costume">Signature</span> ·
+                  256×256 transparent PNG
+                </p>
+              </div>
             </div>
 
-            <!-- Action Controls -->
-            <div class="studio-top-actions">
-              <button type="button" class="studio-icon-btn" data-action="shuffle" title="Randomize character & costume">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
-              </button>
+            <!-- Inspector: one coherent control/action stack -->
+            <div class="inspector-panel">
+              <div class="control-group">
+                <div class="control-label-row">
+                  <span class="control-label" id="identity-control-label">Identity</span>
+                  <button type="button" class="studio-icon-btn" data-action="shuffle" aria-label="Randomize identity, costume, and background" title="Randomize identity, costume, and background">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+                  </button>
+                </div>
+                <div class="identity-row">
+                  <div class="pinned-identities" id="pinned-identities" role="group" aria-label="Recent identities"></div>
+                  <button
+                    type="button"
+                    id="identity-select-trigger"
+                    class="identity-select-trigger"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    aria-controls="identity-select-panel"
+                  >
+                    <span>Select identity</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </button>
+                </div>
+
+                <!-- Identity selector: desktop popover / mobile bottom sheet -->
+                <div class="identity-select-backdrop" data-select-backdrop hidden></div>
+                <div
+                  id="identity-select-panel"
+                  class="identity-select-panel"
+                  role="dialog"
+                  aria-modal="false"
+                  aria-label="Select identity"
+                  hidden
+                >
+                  <div class="select-head">
+                    <label class="sr-only" for="identity-select-search">Search identities</label>
+                    <input
+                      id="identity-select-search"
+                      type="search"
+                      placeholder="Search name or tag"
+                      autocomplete="off"
+                      spellcheck="false"
+                    >
+                    <button type="button" class="select-close" data-close-select aria-label="Close identity selector">✕</button>
+                  </div>
+                  <div class="select-facets" role="group" aria-label="Filter by kind">
+                    <button type="button" data-select-facet="all" aria-pressed="true">All</button>
+                    <button type="button" data-select-facet="people" aria-pressed="false">People</button>
+                    <button type="button" data-select-facet="pals" aria-pressed="false">Pals</button>
+                  </div>
+                  <div id="identity-select-grid" class="select-grid" role="listbox" aria-label="Identities"></div>
+                  <p class="select-status" data-select-status aria-live="polite"></p>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <fieldset class="costumes">
+                  <legend class="control-label">Costume</legend>
+                  <div class="costume-options">
+                    <label>
+                      <input type="radio" name="costume" value="signature" checked>
+                      <span>Signature</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="costume" value="everyday">
+                      <span>Everyday</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="costume" value="work">
+                      <span>Work</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="costume" value="formal">
+                      <span>Formal</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="costume" value="yukata">
+                      <span>Yukata</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="control-group">
+                <span class="control-label" id="theme-control-label">Background</span>
+                <div class="theme-swatches" role="group" aria-labelledby="theme-control-label">
+                  <button type="button" class="swatch-btn" data-theme="mint" title="Soft Mint" aria-label="Theme Mint" aria-pressed="false" style="--swatch-color: #D5ECE4;"></button>
+                  <button type="button" class="swatch-btn active" data-theme="sage" title="Soft Sage" aria-label="Theme Sage" aria-pressed="true" style="--swatch-color: #D3DFDC;"></button>
+                  <button type="button" class="swatch-btn" data-theme="cream" title="Warm Cream" aria-label="Theme Cream" aria-pressed="false" style="--swatch-color: #F7F3EE;"></button>
+                  <button type="button" class="swatch-btn" data-theme="peach" title="Soft Peach" aria-label="Theme Peach" aria-pressed="false" style="--swatch-color: #FDE8E1;"></button>
+                  <button type="button" class="swatch-btn" data-theme="blue" title="Sky Blue" aria-label="Theme Blue" aria-pressed="false" style="--swatch-color: #DCEAF7;"></button>
+                  <button type="button" class="swatch-btn" data-theme="buttercream" title="Buttercream" aria-label="Theme Buttercream" aria-pressed="false" style="--swatch-color: #FBF0D1;"></button>
+                  <button type="button" class="swatch-btn" data-theme="apricot" title="Soft Apricot" aria-label="Theme Apricot" aria-pressed="false" style="--swatch-color: #FADDC7;"></button>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <span class="control-label" id="embed-control-label">Embed</span>
+                <div class="studio-code-banner">
+                  <code class="studio-code-text" id="active-specimen-snippet"><span class="hl-tag">&lt;img</span> <span class="hl-attr">src</span>=<span class="hl-str">"/assets/aster/signature.png"</span> <span class="hl-tag">/&gt;</span></code>
+                  <button type="button" class="studio-copy-btn" data-action="copy-active-snippet" aria-label="Copy code snippet" title="Copy code snippet">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="control-group studio-actions">
+                <a
+                  id="download-transparent"
+                  class="btn btn-primary"
+                  href="%BASE_URL%assets/aster/signature.png"
+                  download="aster-signature.png"
+                  vite-ignore
+                >
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span>Download transparent PNG</span>
+                </a>
+                <button type="button" id="download-background" class="btn btn-secondary">
+                  <span>Download with background</span>
+                </button>
+                <button type="button" id="share-view" class="btn btn-subtle">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                  <span>Share view</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <!-- Studio Specimen Showcase Card -->
-          <div class="studio-specimen-card">
-            <!-- Strip of avatar buttons with names -->
-            <div class="studio-avatar-strip" id="studio-avatar-strip" aria-label="Identity selector">
-              <!-- Injected by catalog.ts -->
-            </div>
+          <p id="studio-status" class="studio-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
 
-            <!-- Code snippet bar with copy button -->
-            <div class="studio-code-banner">
-              <code class="studio-code-text" id="active-specimen-snippet"><span class="hl-tag">&lt;img</span> <span class="hl-attr">src</span>=<span class="hl-str">"/assets/aster/signature.png"</span> <span class="hl-tag">/&gt;</span></code>
-              <button type="button" class="studio-copy-btn" data-action="copy-active-snippet" title="Copy code snippet">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              </button>
-            </div>
+      <!-- S03 Living Context Triptych -->
+      <section class="showcase-section" id="in-the-wild" aria-labelledby="showcase-heading">
+        <div class="section-head">
+          <p class="eyebrow">In the wild</p>
+          <h2 id="showcase-heading" class="section-title">One portrait, every context</h2>
+          <p class="section-deck">
+            The active Studio identity moves through social, chat, and profile surfaces — costume and background included.
+          </p>
+        </div>
+
+        <div class="showcase-tabs" role="tablist" aria-label="Mockup family">
+          <button type="button" role="tab" id="tab-social" data-family="social" aria-selected="true" aria-controls="panel-social">Social</button>
+          <button type="button" role="tab" id="tab-chat" data-family="chat" aria-selected="false" aria-controls="panel-chat" tabindex="-1">Chat</button>
+          <button type="button" role="tab" id="tab-profile" data-family="profile" aria-selected="false" aria-controls="panel-profile" tabindex="-1">Profile</button>
+        </div>
+
+        <div class="showcase-stage" data-theme="sage" data-active-family="social">
+          <!-- Dominant social broadcast -->
+          <div class="showcase-panel showcase-social" id="panel-social" data-family-panel="social" role="tabpanel" aria-labelledby="tab-social">
+            <article class="mockup-card social-card">
+              <div class="card-user-row">
+                <img class="mockup-avatar active-dynamic-avatar" src="%BASE_URL%assets/aster/signature.png" alt="" width="44" height="44" vite-ignore>
+                <div class="card-user-info">
+                  <strong class="user-name"><span class="active-dynamic-name">Aster</span></strong>
+                  <span class="user-time">Product Designer · 3h ago</span>
+                </div>
+              </div>
+              <div class="social-image-box">
+                <img class="social-post-img" src="/src/assets/social-softfolk.jpg" alt="Soft flocked 3D shapes in pastel peach, pink, and lavender tones" width="1376" height="774" decoding="async">
+              </div>
+              <div class="social-reactions-row">
+                <div class="avatar-reaction-stack">
+                  <img src="%BASE_URL%assets/moon-cat/signature.png" alt="" width="22" height="22" vite-ignore>
+                  <img src="%BASE_URL%assets/cloud-bunny/signature.png" alt="" width="22" height="22" vite-ignore>
+                  <img src="%BASE_URL%assets/kai/signature.png" alt="" width="22" height="22" vite-ignore>
+                  <img src="%BASE_URL%assets/mira/signature.png" alt="" width="22" height="22" vite-ignore>
+                </div>
+                <span class="reactions-count">Liked by Moon Cat, Cloud Bunny and 24 others</span>
+              </div>
+              <div class="social-action-buttons">
+                <button type="button" class="mockup-pill-btn like-btn" data-interactive="like" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  <span>Like</span>
+                  <span class="like-count">24</span>
+                </button>
+                <button type="button" class="mockup-pill-btn" data-interactive="comment">
+                  <span>Comment</span>
+                </button>
+              </div>
+            </article>
           </div>
 
-          <!-- Live UI Mockups 3-Column Grid -->
-          <div class="mockups-stage-grid">
-            <!-- Column 1 -->
-            <div class="mockup-column">
-              <!-- Card 1: Social Post -->
-              <article class="mockup-card social-card">
-                <div class="card-user-row">
-                  <img class="mockup-avatar active-dynamic-avatar" src="%BASE_URL%assets/aster/signature.png" alt="" width="44" height="44" vite-ignore>
-                  <div class="card-user-info">
-                    <strong class="user-name"><span class="active-dynamic-name">Aster</span></strong>
-                    <span class="user-time">Product Designer · 3h ago</span>
-                  </div>
-                </div>
-                <div class="social-image-box">
-                  <img class="social-post-img" src="/src/assets/social-softfolk.jpg" alt="Soft flocked 3D shapes in pastel peach, pink, and lavender tones" width="1376" height="774" loading="lazy">
-                </div>
-                <div class="social-reactions-row">
-                  <div class="avatar-reaction-stack">
-                    <img src="%BASE_URL%assets/moon-cat/signature.png" alt="" width="22" height="22" vite-ignore>
-                    <img src="%BASE_URL%assets/cloud-bunny/signature.png" alt="" width="22" height="22" vite-ignore>
-                    <img src="%BASE_URL%assets/kai/signature.png" alt="" width="22" height="22" vite-ignore>
-                    <img src="%BASE_URL%assets/mira/signature.png" alt="" width="22" height="22" vite-ignore>
-                  </div>
-                  <span class="reactions-count">Liked by Moon Cat, Cloud Bunny and 24 others</span>
-                </div>
-                <div class="social-action-buttons">
-                  <button type="button" class="mockup-pill-btn like-btn" data-interactive="like">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span>Like</span>
-                  </button>
-                  <button type="button" class="mockup-pill-btn" data-interactive="comment">
-                    <span>Comment</span>
-                  </button>
-                </div>
-              </article>
-
-              <!-- Card 2: Chat List -->
-              <article class="mockup-card chat-list-card">
-                <h4 class="card-sec-title">Messages</h4>
-                <div class="chat-items-list">
-                  <div class="chat-list-row">
-                    <img class="chat-item-avatar active-dynamic-avatar" src="%BASE_URL%assets/aster/signature.png" alt="" width="38" height="38" vite-ignore>
-                    <div class="chat-item-meta">
-                      <div class="chat-item-name-row">
-                        <strong class="active-dynamic-name">Aster</strong>
-                        <span class="chat-active-badge">Lead</span>
-                      </div>
-                      <span class="chat-item-time">2m ago</span>
+          <!-- Lifted chat channel -->
+          <div class="showcase-panel showcase-chat" id="panel-chat" data-family-panel="chat" role="tabpanel" aria-labelledby="tab-chat">
+            <article class="mockup-card chat-list-card">
+              <h4 class="card-sec-title">Messages</h4>
+              <div class="chat-items-list">
+                <div class="chat-list-row">
+                  <img class="chat-item-avatar active-dynamic-avatar" src="%BASE_URL%assets/aster/signature.png" alt="" width="38" height="38" vite-ignore>
+                  <div class="chat-item-meta">
+                    <div class="chat-item-name-row">
+                      <strong class="active-dynamic-name">Aster</strong>
+                      <span class="chat-active-badge">Lead</span>
                     </div>
+                    <span class="chat-item-time">2m ago</span>
                   </div>
-                  <div class="chat-list-row">
-                    <img class="chat-item-avatar" src="%BASE_URL%assets/moon-cat/signature.png" alt="Moon Cat" width="38" height="38" vite-ignore>
-                    <div class="chat-item-meta">
-                      <div class="chat-item-name-row">
-                        <strong class="chat-item-name">Moon Cat</strong>
-                      </div>
-                      <span class="chat-item-time">15m ago</span>
+                </div>
+                <div class="chat-list-row">
+                  <img class="chat-item-avatar" src="%BASE_URL%assets/moon-cat/signature.png" alt="Moon Cat" width="38" height="38" vite-ignore>
+                  <div class="chat-item-meta">
+                    <div class="chat-item-name-row">
+                      <strong class="chat-item-name">Moon Cat</strong>
                     </div>
+                    <span class="chat-item-time">15m ago</span>
                   </div>
                 </div>
-              </article>
-            </div>
+              </div>
+            </article>
 
-            <!-- Column 2 -->
-            <div class="mockup-column">
-              <!-- Card 3: Comment Thread Card -->
-              <article class="mockup-card comment-card">
-                <div class="comment-bubble">
-                  <div class="comment-head">
-                    <img class="comment-avatar active-dynamic-avatar" src="%BASE_URL%assets/aster/signature.png" alt="" width="32" height="32" vite-ignore>
-                    <strong class="comment-author active-dynamic-name">Aster</strong>
-                  </div>
-                  <p class="comment-text">
-                    Shipped the new onboarding flow this morning — analytics are already showing a 14% lift in completion rates 🎉
-                  </p>
+            <article class="mockup-card comment-card">
+              <div class="comment-bubble">
+                <div class="comment-head">
+                  <img class="comment-avatar active-dynamic-avatar" src="%BASE_URL%assets/aster/signature.png" alt="" width="32" height="32" vite-ignore>
+                  <strong class="comment-author active-dynamic-name">Aster</strong>
                 </div>
-                <div class="comment-actions-bar">
-                  <button type="button" class="comment-action-link">Reply</button>
-                  <button type="button" class="comment-action-link">React</button>
+                <p class="comment-text">
+                  Shipped the new onboarding flow this morning — analytics are already showing a 14% lift in completion rates 🎉
+                </p>
+              </div>
+              <div class="comment-actions-bar">
+                <button type="button" class="comment-action-link">Reply</button>
+                <button type="button" class="comment-action-link">React</button>
+              </div>
+              <div class="comment-reactions-list">
+                <div class="reaction-user-item">
+                  <img src="%BASE_URL%assets/moon-cat/signature.png" alt="" width="20" height="20" vite-ignore>
+                  <span>Moon Cat · Design System</span>
                 </div>
-                <div class="comment-reactions-list">
-                  <div class="reaction-user-item">
-                    <img src="%BASE_URL%assets/moon-cat/signature.png" alt="" width="20" height="20" vite-ignore>
-                    <span>Moon Cat · Design System</span>
-                  </div>
-                  <div class="reaction-user-item">
-                    <img src="%BASE_URL%assets/mira/signature.png" alt="" width="20" height="20" vite-ignore>
-                    <span>Mira · Product Ops</span>
-                  </div>
-                  <div class="reaction-user-item">
-                    <img src="%BASE_URL%assets/cloud-bunny/signature.png" alt="" width="20" height="20" vite-ignore>
-                    <span>Cloud Bunny · Engineering</span>
-                  </div>
+                <div class="reaction-user-item">
+                  <img src="%BASE_URL%assets/mira/signature.png" alt="" width="20" height="20" vite-ignore>
+                  <span>Mira · Product Ops</span>
                 </div>
-              </article>
+                <div class="reaction-user-item">
+                  <img src="%BASE_URL%assets/cloud-bunny/signature.png" alt="" width="20" height="20" vite-ignore>
+                  <span>Cloud Bunny · Engineering</span>
+                </div>
+              </div>
+            </article>
+          </div>
 
-              <!-- Card 4: Collaborators Card -->
-              <article class="mockup-card mutual-card">
-                <h4 class="card-sec-title">Collaborators</h4>
-                <div class="mutual-grid" id="team-members-grid">
-                  <!-- Populated dynamically with click handlers -->
+          <!-- Wide profile/team dossier -->
+          <div class="showcase-panel showcase-profile" id="panel-profile" data-family-panel="profile" role="tabpanel" aria-labelledby="tab-profile">
+            <article class="mockup-card banner-profile-card">
+              <div class="banner-cover-wrap">
+                <img class="banner-cover-img" src="/src/assets/banner-softfolk.jpg" alt="Soft flocked 3D mochi shapes in pastel gradient" width="1770" height="354" decoding="async">
+              </div>
+              <div class="banner-body">
+                <div class="banner-avatar-wrap">
+                  <img class="banner-avatar active-dynamic-avatar" src="%BASE_URL%assets/aster/signature.png" alt="" width="68" height="68" vite-ignore>
                 </div>
-              </article>
-            </div>
+                <h4 class="banner-user-name active-dynamic-name">Aster</h4>
+                <p class="banner-user-followers">Senior Product Designer · San Francisco</p>
+                <button type="button" class="btn-profile-follow" data-interactive="follow" aria-pressed="false">Follow</button>
+              </div>
+            </article>
 
-            <!-- Column 3 -->
-            <div class="mockup-column">
-              <!-- Card 5: User Profile Stats Card -->
+            <div class="profile-subgrid">
               <article class="mockup-card profile-stats-card">
                 <div class="profile-stats-top">
                   <img class="profile-stats-avatar active-dynamic-avatar" src="%BASE_URL%assets/aster/signature.png" alt="" width="60" height="60" vite-ignore>
@@ -433,21 +569,13 @@
                   <h4 class="profile-user-name active-dynamic-name">Aster</h4>
                   <p class="profile-user-bio">Design systems &amp; craft @ Acme Studio · Building open web tools</p>
                 </div>
-                <button type="button" class="btn-profile-follow" data-interactive="follow">Follow</button>
+                <button type="button" class="btn-profile-follow" data-interactive="follow" aria-pressed="false">Follow</button>
               </article>
 
-              <!-- Card 6: Story / Banner Profile Card -->
-              <article class="mockup-card banner-profile-card">
-                <div class="banner-cover-wrap">
-                  <img class="banner-cover-img" src="/src/assets/banner-softfolk.jpg" alt="Soft flocked 3D mochi shapes in pastel gradient" width="1770" height="354" loading="lazy">
-                </div>
-                <div class="banner-body">
-                  <div class="banner-avatar-wrap">
-                    <img class="banner-avatar active-dynamic-avatar" src="%BASE_URL%assets/aster/signature.png" alt="" width="68" height="68" vite-ignore>
-                  </div>
-                  <h4 class="banner-user-name active-dynamic-name">Aster</h4>
-                  <p class="banner-user-followers">Senior Product Designer · San Francisco</p>
-                  <button type="button" class="btn-profile-follow" data-interactive="follow">Follow</button>
+              <article class="mockup-card mutual-card">
+                <h4 class="card-sec-title">Collaborators</h4>
+                <div class="mutual-grid" id="team-members-grid">
+                  <!-- Populated dynamically with click handlers -->
                 </div>
               </article>
             </div>
@@ -455,35 +583,57 @@
         </div>
       </section>
 
-      <!-- Full Collection Explorer & Search -->
-      <section class="catalog-section" aria-labelledby="catalog-heading">
-        <div class="catalog-header">
-          <div class="catalog-title-group">
-            <h2 id="catalog-heading" class="catalog-title">All <span id="catalog-identities-count">40</span> Identities</h2>
-            <p class="catalog-deck">Search by name, costume, or features.</p>
+      <!-- S04 Curated Collection Explorer -->
+      <section class="catalog-section" id="collection-explorer" aria-labelledby="catalog-heading">
+        <div class="section-head">
+          <p class="eyebrow">The Collection</p>
+          <h2 id="catalog-heading" class="section-title">Meet the collection</h2>
+          <p class="catalog-deck">
+            Search <span id="catalog-identities-count">40</span> identities by name, costume, or feature — or browse People and Pals.
+          </p>
+        </div>
+
+        <div class="explorer-toolbar">
+          <search>
+            <form id="discover" action="#" method="get">
+              <label for="identity-search">Find an identity</label>
+              <div class="search-row">
+                <input
+                  id="identity-search"
+                  name="q"
+                  type="search"
+                  autocomplete="off"
+                  placeholder="Search by name or tag…"
+                  spellcheck="false"
+                >
+                <button type="button" class="text-action" data-reset-search hidden>
+                  Clear search
+                </button>
+              </div>
+            </form>
+          </search>
+
+          <div class="facet-tabs" role="group" aria-label="Browse the collection">
+            <button type="button" class="facet-btn active" data-facet="featured" aria-pressed="true">
+              Featured <span class="facet-count" data-facet-count="featured">12</span>
+            </button>
+            <button type="button" class="facet-btn" data-facet="all" aria-pressed="false">
+              All <span class="facet-count" data-facet-count="all">40</span>
+            </button>
+            <button type="button" class="facet-btn" data-facet="people" aria-pressed="false">
+              People <span class="facet-count" data-facet-count="people">20</span>
+            </button>
+            <button type="button" class="facet-btn" data-facet="pals" aria-pressed="false">
+              Pals <span class="facet-count" data-facet-count="pals">20</span>
+            </button>
           </div>
 
-          <div class="toolbar">
-            <div class="toolbar-inner">
-              <search>
-                <form id="discover" action="#" method="get">
-                  <label for="identity-search">Find an identity</label>
-                  <div class="search-row">
-                    <input
-                      id="identity-search"
-                      name="q"
-                      type="search"
-                      autocomplete="off"
-                      placeholder="Search name or tag — try “cat”, “glasses”, “warm-palette”"
-                      spellcheck="false"
-                    >
-                    <button type="button" class="text-action" data-reset-search hidden>
-                      Clear search
-                    </button>
-                  </div>
-                </form>
-              </search>
-            </div>
+          <div class="tag-chips" role="group" aria-label="Popular tags">
+            <button type="button" class="tag-chip" data-tag-chip="warm-palette">warm-palette</button>
+            <button type="button" class="tag-chip" data-tag-chip="cool-palette">cool-palette</button>
+            <button type="button" class="tag-chip" data-tag-chip="glasses">glasses</button>
+            <button type="button" class="tag-chip" data-tag-chip="cat">cat</button>
+            <button type="button" class="tag-chip" data-tag-chip="older">older</button>
           </div>
         </div>
 
@@ -494,7 +644,19 @@
             <p>No identities match “<span data-empty-query></span>”.</p>
             <p>Search uses names and the tags defined in <code>data/avatars.json</code>.</p>
           </div>
+          <div class="show-more-row">
+            <button type="button" id="show-more" class="btn btn-secondary" hidden>
+              <span>Show more identities</span>
+              <span class="show-more-remaining" id="show-more-remaining"></span>
+            </button>
+          </div>
         </div>
+      </section>
+
+      <!-- S05 Public-Domain Colophon -->
+      <section class="colophon" aria-label="Public domain license">
+        <span class="colophon-seal" aria-hidden="true">CC0</span>
+        <p class="colophon-line">CC0 1.0 · Public domain · No attribution required</p>
       </section>
     </main>
 

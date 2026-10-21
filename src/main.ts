@@ -1,9 +1,11 @@
 import { mountCatalog } from './catalog.ts'
 import { parseCollection, publicUrl } from './collection.ts'
+import { initIntroMotion } from './intro.ts'
 import { initTheme } from './theme.ts'
 
 const root = document
 initTheme(root)
+initIntroMotion(root)
 const loadError = document.getElementById('load-error')
 const runtimeBaseUrl = import.meta.env.BASE_URL
 const collectionUrl = publicUrl('data/avatars.json', runtimeBaseUrl)

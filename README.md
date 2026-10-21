@@ -65,7 +65,7 @@ For example:
 <img src="/assets/aster/work.png" alt="Aster in their work outfit" width="256" height="256" />
 ```
 
-[`data/avatars.json`](data/avatars.json) lists every identity, costume path, and discovery tag if you want to build a picker or search the collection.
+[`data/avatars.json`](data/avatars.json) lists every identity with its kind (`person` or `pal`), costume paths, and discovery tags if you want to build a picker or search the collection.
 
 ## Run the website locally
 

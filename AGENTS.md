@@ -16,7 +16,7 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 - Keep exactly `avatars.length * 5` nested portrait files (currently 200 across 40 identities) and no root-level aliases.
 - Every canonical portrait is a metadata-free 256×256 8-bit transparent RGBA PNG. Preserve alpha quality and decontaminated soft edges; do not reintroduce a cream matte.
 - Canonical PNG encoding is losslessly optimized. Preserve decoded pixels, color type, bit depth, metadata-free delivery, and transparent-pixel RGB; do not use alpha alteration, palette conversion, quantization, resizing, or lossy re-encoding to meet the byte budget.
-- `data/avatars.json` stays the sole registry owning the identity, tag, costume, and path inventory (current baseline: 40×5). Keep its paths aligned with `src/collection.ts` and the files on disk.
+- `data/avatars.json` stays the sole registry owning the identity, kind (`person`/`pal`), tag, costume, and path inventory (current baseline: 40×5). Keep its paths aligned with `src/collection.ts` and the files on disk.
 - Package metadata and visible snippets continue to use canonical `/assets/<identity>/<costume>.png` examples. The hosted demo resolves images, fetches, downloads, and resource links through Vite `BASE_URL` so the standard `/softfolk/` GitHub Pages project path works without changing package-facing examples.
 - `brand/softfolk-symbol.png` is the archival Q master. `brand/icons/` owns fixed-size deliveries. Preserve the selected Q geometry, square padding ratio, gradient, texture, color design, and transparent perimeter.
 - `brand/social/softfolk-og.png` is the canonical 1200×630 opaque RGB share card. Rebuild it from `brand/social/softfolk-og-source.html` with accepted logo/avatar pixels and authored text; do not use imagegen text or a cropped page screenshot.
@@ -27,11 +27,11 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 ## Website direction
 
 - The page is a real shareable product website and interactive playground, not a specification sheet or internal lab.
-- Keep the top of the page clean: no utility strip above the hero and no frame around the logo.
-- Hero typography must feel balanced rather than oversized. Keep the current 600-weight title direction and avoid excessive mobile line wrapping.
+- Page anatomy is fixed: compact sticky `site-header`, curtain-call hero, Studio workbench, `in-the-wild` showcase, collection explorer, public-domain colophon, minimal footer. Do not reintroduce a utility strip above the header, a quickstart block, or a portrait marquee.
+- The hero features the 12-character Softfolk ensemble (`src/assets/hero-ensemble.webp`) on a grounded studio stage with a real-text `Softfolk` wordmark plaque and an authored, non-blocking intro motion sequence that respects `prefers-reduced-motion: reduce`. The wordmark must stay selectable text with readable contrast; the ensemble stage stays decorative (`aria-hidden`) and pointer-free, while the interactive ensemble cast chips below connect directly to the Studio. Do not ship generated title pixels.
+- Hero typography must feel balanced rather than oversized. Keep the wordmark clamp and the 600-weight H1 deck direction, and avoid excessive mobile line wrapping.
 - Use Plus Jakarta Sans as the single visual font family across headings, body, controls, metadata, status, and code-like surfaces. Use weight, size, spacing, paint, and syntax color—not a second font—to create hierarchy.
 - Keep the whole-page Softfolk atmosphere: warm ivory with broad apricot, coral-pink, lavender, and soft-blue zones derived from the logo. Fine static noise should remain restrained and must not dirty text, cards, portraits, or generated images.
-- The portrait ribbon is a marquee. Its portraits should read as soft floating objects without border rings or box shadows, and reduced-motion mode must remain complete and usable.
 
 ## Softfolk visual language
 
@@ -44,12 +44,15 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 
 ## Playground and interaction contracts
 
-- The playground must be genuinely interactive. Costume, identity, theme, shuffle, snippet, copy, download, search, and compare behavior must remain truthful.
+- The playground must be genuinely interactive. Costume, identity, theme, shuffle, snippet, copy, download, share, search, facet, and compare behavior must remain truthful.
 - Theme controls change the avatar presentation background through the canonical transparent alpha. `.studio-stage` itself stays transparent; do not recolor the whole playground canvas.
-- Theme colors must reach the relevant avatar presentations consistently, including the active mockups and selector portraits.
+- Theme colors must reach the relevant avatar presentations consistently, including the showcase mockups and selector portraits; `data-theme` stays synced between the Studio stage and the showcase stage.
 - Shuffle randomizes identity, costume, and theme, then synchronizes every dependent UI surface.
 - The studio snippet is a real canonical `<img src="/assets/<identity>/<costume>.png" />` example. Keep its visible text and clipboard payload exact.
-- Use the shared `.hl-tag`, `.hl-attr`, and `.hl-str` syntax-highlight recipe for both quickstart and studio code surfaces. Keep the shared dark code surface readable.
+- Use the shared `.hl-tag`, `.hl-attr`, and `.hl-str` syntax-highlight recipe on the studio code surface. Keep the shared dark code surface readable.
+- The identity selector is a desktop popover / mobile bottom sheet with search, People/Pals facets, and a recent-identities row. It must keep focus management, Escape/backdrop dismissal, and truthful filtered counts.
+- The explorer defaults to the curated Featured set; People/Pals/All facets browse in canonical order, All reveals in bounded batches through a truthful Show more action, and an active search always reaches the whole registry regardless of facet.
+- Share view copies an explicit `?identity&costume&theme` URL that restores the same Studio state; Download with background composites the active portrait onto the active theme paint client-side and never touches canonical assets.
 - Mock content should look like believable professional product, social, chat, and profile usage—not Softfolk talking about itself.
 - Catalog Download stays a truthful native PNG download with a visible download icon. Compare is eye-icon-only visually but retains a useful accessible name and tooltip.
 - Clicking or tapping a catalog portrait opens that identity’s Compare dialog; it must not select Studio or jump the page.
@@ -57,9 +60,10 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 
 ## Layout and responsive behavior
 
-- `catalog-header` is a deliberate responsive flex composition: title/deck left and toolbar right on desktop, with a clean narrow-screen stack.
-- Identity cards are borderless. Preserve their focus affordance and practical Download/Compare anatomy.
+- The explorer toolbar is a deliberate responsive composition: search, facet tabs, and tag chips stack cleanly on narrow screens. Anchor targets keep `scroll-margin-top` clear of the sticky header.
+- Identity cards are borderless tonal raised paper pedestals with no border ring. Preserve their focus affordance and practical Download/Compare anatomy.
 - `studio-stage` has no border, shadow, background paint, or shell padding. Its child surfaces own the spacing and grouping.
+- The showcase is an asymmetric editorial triptych on desktop and a tabbed single-panel stage on mobile; every family stays reachable in both modes.
 - Social and banner mockups use the selected Softfolk-owned images. In the banner profile card, the avatar paints above the cover, remains unclipped, and clears the name/body content.
 - Review desktop and mobile as whole pages, not as isolated component crops. Required checkpoints are 1440px desktop and 390px mobile unless the task establishes different targets.
 - Zero horizontal overflow, readable text wrapping, and stable card/control geometry are release requirements.
@@ -67,12 +71,13 @@ This file applies to the whole repository. Current source, tests, `README.md`, `
 ## Generated website assets
 
 - When a website image is requested, inspect the actual Softfolk symbol and target geometry before writing the prompt.
+- Treat a generated website raster as private source artwork by default, not as an automatically approved full-frame runtime image. Agy/Gemini owns the dicut, layer separation, edge cleanup, and multi-background QA for website artwork unless Mahiro explicitly names another owner. The public site should compose Mahiro-accepted transparent delivery layers through real responsive layout/CSS; use an untouched full-background raw directly only when Mahiro explicitly approves that exact runtime role.
 - Generated social/banner imagery should share the logo’s matte flocked or powder-soft microtexture, diffuse low-contrast light, soft pastel transitions, calm depth, and rounded organic forms.
 - Abstract means non-literal: no workspace, person, interface, product story, text, logo, watermark, or label unless the task explicitly requires one.
 - Do not add generic circles, halos, frames, or “premium AI” decoration merely to make an asset feel finished.
 - Keep social and banner compositions distinct and crop-safe for their real aspect ratios; a banner is not merely a stretched social image or CSS gradient.
 - Inspect every generated raster before selecting it. Reject text corruption, detached fragments, wrong material, literal symbolism, weak crops, and images that only match the palette but miss the logo’s softness.
-- Store site-only generated runtime images outside canonical `assets/**` and `brand/**`. Retain exact prompt, provider/model, source/output identity, hash, and selection/rejection evidence in the production record, but do not describe that record as a public package contract.
+- Store site-only generated runtime images outside canonical `assets/**` and `brand/**`. Retain the untouched raw, exact prompt, provider/model, source/output identity, masks, dicut receipts, layer manifest, QA, hashes, and selection/rejection evidence in the production record, but do not describe that record as a public package contract.
 
 ## Implementation workflow
 

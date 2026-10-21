@@ -58,6 +58,24 @@ describe('source inventory', () => {
     }
   })
 
+  it('assigns explicit kind metadata matching the canonical People and Pals split', () => {
+    const people = new Set(REQUIRED_PEOPLE_IDS)
+    const pals = new Set(REQUIRED_PALS_IDS)
+
+    for (const avatar of collection.avatars) {
+      expect(avatar.kind === 'person' || avatar.kind === 'pal').toBe(true)
+      if (people.has(avatar.id)) {
+        expect(avatar.kind).toBe('person')
+      }
+      if (pals.has(avatar.id)) {
+        expect(avatar.kind).toBe('pal')
+      }
+    }
+
+    expect(collection.avatars.filter((avatar) => avatar.kind === 'person')).toHaveLength(20)
+    expect(collection.avatars.filter((avatar) => avatar.kind === 'pal')).toHaveLength(20)
+  })
+
   it('has exactly avatars.length * 5 nested PNGs and no root-level asset aliases', () => {
     expect(pngFiles).toHaveLength(collection.avatars.length * COSTUME_IDS.length)
 

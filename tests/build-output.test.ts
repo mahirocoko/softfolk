@@ -81,8 +81,9 @@ describe('build output canonical paths', () => {
     expect(html).toContain('A growing collection of soft 3D portraits')
     expect(html).toContain('40</span> Unique Identities')
     expect(html).toContain('200</span> Soft 3D Portraits')
-    expect(html).toContain('All <span id="catalog-identities-count">40</span> Identities')
+    expect(html).toContain('Search <span id="catalog-identities-count">40</span> identities')
     expect(html).toContain('5 Costumes Each')
+    expect(html).toContain('CC0 1.0 · Public domain · No attribution required')
     expect(html).not.toContain('All 12 Identities')
 
     for (const name of runtimeIcons) {
@@ -97,16 +98,14 @@ describe('build output canonical paths', () => {
     expect(symbol).toContain(
       `srcset="${siteBase}brand/icons/softfolk-256.png 256w, ${siteBase}brand/icons/softfolk-512.png 512w"`,
     )
-    expect(symbol).toContain('sizes="clamp(6.75rem, 28vw, 10rem)"')
+    expect(symbol).toContain('sizes="2rem"')
     expect(symbol).not.toMatch(/style=/)
 
     const css = (existsSync(join(distRoot, 'site')) ? readdirSync(join(distRoot, 'site')) : [])
       .filter((name) => name.endsWith('.css'))
       .map((name) => readFileSync(join(distRoot, 'site', name), 'utf8'))
       .join('\n')
-    expect(css.replace(/\s/g, '')).toMatch(
-      /\.brand-symbol\{[^}]*width:clamp\(6\.75rem,28vw,10rem\)/,
-    )
+    expect(css.replace(/\s/g, '')).toMatch(/\.brand-symbol\{[^}]*width:2rem/)
     expect(css).not.toMatch(/\.brand-symbol[^{]*\{[^}]*(?:filter|hue-rotate|mix-blend-mode)\s*:/)
     expect(css).not.toMatch(/\.brand-symbol[^{]*\{[^}]*object-fit\s*:\s*cover/)
   })
@@ -156,19 +155,59 @@ describe('build output canonical paths', () => {
     }
   })
 
-  it('ensures all marquee track images load eagerly and deterministically without lazy loading', () => {
+  it('emits the curtain-call ensemble hero with high-priority LCP delivery and canonical cast chips', () => {
     const html = readFileSync(join(distRoot, 'index.html'), 'utf8')
-    const marqueeWrapperMatch = html.match(/<div\s+class="marquee-wrapper"[\s\S]*?<\/header>/)?.[0]
-    expect(marqueeWrapperMatch).toBeDefined()
-    if (!marqueeWrapperMatch) return
+    const stageMatch = html.match(/<div\s+class="hero-stage"[\s\S]*?<\/section>/)?.[0]
+    expect(stageMatch).toBeDefined()
+    if (!stageMatch) return
 
-    const imgTags = marqueeWrapperMatch.match(/<img[\s\S]*?>/g) ?? []
-    expect(imgTags).toHaveLength(24)
-    for (const img of imgTags) {
-      expect(img).toContain('loading="eager"')
-      expect(img).not.toContain('loading="lazy"')
-      expect(img).toContain(`src="${siteBase}assets/`)
+    const ensembleImg = stageMatch.match(/<img[\s\S]*?id="hero-ensemble-img"[\s\S]*?>/)?.[0]
+    expect(ensembleImg).toBeDefined()
+    expect(ensembleImg).toContain('width="1536"')
+    expect(ensembleImg).toContain('height="1024"')
+    expect(ensembleImg).toContain('fetchpriority="high"')
+    expect(ensembleImg).toContain('decoding="async"')
+    expect(ensembleImg).not.toContain('loading="lazy"')
+    expect(ensembleImg).toContain('alt=""')
+    expect(ensembleImg).toMatch(/src="\/softfolk\/site\/hero-ensemble-[^"]+\.webp"/)
+
+    const siteFiles = existsSync(join(distRoot, 'site')) ? readdirSync(join(distRoot, 'site')) : []
+    expect(siteFiles.some((name) => /^hero-ensemble-.*\.webp$/.test(name))).toBe(true)
+    expect(siteFiles.some((name) => /^hero-cloud-stage-/.test(name))).toBe(false)
+
+    const castChipImgs = stageMatch.match(/<a\s+class="cast-chip[^"]*"[\s\S]*?<\/a>/g) ?? []
+    expect(castChipImgs).toHaveLength(8)
+    for (const chip of castChipImgs) {
+      expect(chip).toContain(`src="${siteBase}assets/`)
+      expect(chip).toContain('alt=""')
     }
+
+    // The semantic wordmark stays real text; generated title pixels are never shipped
+    expect(stageMatch).toContain('<span class="wordmark-text">Softfolk</span>')
+    expect(stageMatch).toContain('aria-hidden="true"')
+  })
+
+  it('emits the compact header with section anchors and the public-domain colophon', () => {
+    const html = readFileSync(join(distRoot, 'index.html'), 'utf8')
+
+    const header = html.match(/<header\s+class="site-header"[\s\S]*?<\/header>/)?.[0]
+    expect(header).toBeDefined()
+    if (!header) return
+    expect(header).toContain('href="#studio"')
+    expect(header).toContain('href="#collection-explorer"')
+    expect(header).toContain('href="https://github.com/mahirocoko/softfolk"')
+    expect(header).toContain('id="theme-toggle"')
+
+    const colophon = html.match(/<section\s+class="colophon"[\s\S]*?<\/section>/)?.[0]
+    expect(colophon).toBeDefined()
+    if (!colophon) return
+    expect(colophon).toContain('CC0 1.0 · Public domain · No attribution required')
+
+    // The colophon is a quiet endcap above the unchanged minimal footer
+    expect(html.indexOf('class="colophon"')).toBeLessThan(html.indexOf('class="site-footer"'))
+    expect(html).toContain('Built by')
+    expect(html).toContain(`href="${siteBase}data/avatars.json"`)
+    expect(html).toContain(`href="${siteBase}LICENSE"`)
   })
 
   it('enforces complete reduced-motion resets and scroll-behavior in emitted CSS', () => {
@@ -182,6 +221,8 @@ describe('build output canonical paths', () => {
     expect(minCss).toContain('scroll-behavior:auto!important')
     expect(minCss).toMatch(/transition-duration:(?:0\.01ms|\.01ms)!important/)
     expect(minCss).toMatch(/animation-duration:(?:0\.01ms|\.01ms)!important/)
+    expect(minCss).toContain('[hidden]{display:none!important}')
+    expect(minCss).toContain('grid-template-areas:"socialchatprofile"')
   })
 
   it('ensures all aria-labelledby attributes point to existing element IDs', () => {
